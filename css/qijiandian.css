@@ -1,0 +1,1742 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	outline: none;
+	-webkit-user-select：none;
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	font-family: "微软雅黑";
+}
+html,body{
+	font-size: 100px;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+a{
+	text-decoration: none;
+}
+img{
+    border: none;
+    vertical-align: middle;
+}
+li{
+	list-style: none;
+}
+.wrap{
+	overflow: hidden;
+	min-width: 3.2rem;
+	/*max-width: 7.5rem;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+#panobox{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*竖屏提示*/
+#shutips{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../img/load_bg.png) no-repeat center; 
+	background-size: cover;
+	z-index: 1000;
+}
+#shutips img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto auto;
+	width: 5.2rem;
+}
+/*loading*/
+.wrap .load-box{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../img/load_bg.png) no-repeat center; 
+	background-size: cover;
+	z-index: 100;
+}
+.wrap .load-box .load-logo{
+	display: block;
+	position: absolute;
+	top: 1.3rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 1.86rem;
+}
+.wrap .load-box .progress-box{
+	display: block;
+	position: absolute;
+	top: 4.22rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 6.2rem;
+}
+.wrap .load-box .progress{
+	width: 5.67rem;
+    height: 0.93rem;
+    position: absolute;
+    top: 0.04rem;
+    left: 0.17rem;
+    text-align: center;
+    line-height: 0.93rem;
+    font-size: 0.26rem;
+    z-index: 10;
+}
+.wrap .load-box .progress .pao{
+   display: block;
+    height: 0.93rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #4b9476;
+    z-index: 4;
+}
+.wrap .load-box .progress img{
+    display: block;
+    position: absolute;
+    width: 2.15rem;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    z-index: 4;
+}
+.wrap .load-box .process_text{
+   display: block;
+    font-weight: bold;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #c0c0c0;
+    font-size: 0.26rem;
+    text-align: center;
+    z-index: 4;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
+}
+.wrap .load-box .load-tip{
+	display: block;
+	width: 100%;
+}
+.wrap .load-box .load-login{
+	display: none;
+	position: absolute;
+	top: 4.17rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 3.7rem;
+}
+/*放回按钮*/
+.back1{
+	display: block;
+	width:0.56rem ;
+	position: absolute;
+	top: 0.24rem;
+	left: 0.24rem;
+	z-index: 10;
+}
+/*点赞*/
+.likebox{
+	position: absolute;
+	bottom: 0.3rem;
+	right: 0.3rem;
+	height: 0.42rem;
+	line-height: 0.42rem;
+	font-size: 0.3rem;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 0 0.2rem 0 0.44rem;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 0.06rem;
+	box-shadow: 0.06rem 0.06rem 0.12rem rgba(0,0,0,0.4);
+	z-index: 10;
+}
+.likebox .likebtn{
+	position: absolute;
+	bottom: -0.1rem;
+	left: -0.26rem;
+	width: 0.57rem;
+	height: 0.53rem;
+	border: none;
+	margin: 0;
+	background: none;
+	background-image: url(../img/love.png);
+	background-size: 100%;
+	
+}
+.likebox .mun{
+	display: inline-block;
+	height: 100%;
+}
+
+/*back-面*/
+.laoyuangong{
+    position: absolute;
+    width: 107px;
+    height: 70px;
+    top: 46%;
+    left: 22%;
+    -webkit-transform: perspective(600px);
+}
+.yuangongvalue{
+    position: absolute;
+    width: 164px;
+    height: 110px;
+    top: 44%;
+    left: 3%;
+    -webkit-transform: perspective(600px);
+}
+.aixiaoyu{
+    position: absolute;
+    width: 112px;
+    height: 177px;
+    top: 45%;
+    left: 34%;
+    -webkit-transform: perspective(600px);
+    background: url(../qijiandian/tips.png) no-repeat;
+    background-size: 0.6rem 0.6rem;
+    background-position: 0.7rem 0rem;
+}
+.gongchangbuju{
+    position: absolute;
+    width: 224px;
+    height: 92px;
+    top: 44%;
+    left: 49%;
+    -webkit-transform: perspective(600px);
+}
+.dashiji{
+    position: absolute;
+    width: 224px;
+    height: 115px;
+    top: 44%;
+    left: 77%;
+    -webkit-transform: perspective(600px);
+}
+.zhufushipin{
+    position: absolute;
+    width: 105px;
+    height: 85px;
+    top: 53%;
+    left: 47%;
+    -webkit-transform: perspective(600px);
+}
+/*front-面*/
+.wenhuadeliliang{
+    position: absolute;
+    width: 183px;
+    height: 194px;
+    top: 41%;
+    left: 12%;
+    -webkit-transform: perspective(600px);
+}
+.zhuoyueyunying{
+    position: absolute;
+    width: 232px;
+    height: 80px;
+    top: 45%;
+    left: 51%;
+    -webkit-transform: perspective(600px);
+}
+.zhouyuejishu{
+    position: absolute;
+    width: 236px;
+    height: 134px;
+    top: 42%;
+    left: 77%;
+    -webkit-transform: perspective(600px);
+    background: url(../qijiandian/tips.png) no-repeat;
+    background-size: 0.6rem 0.6rem;
+    background-position: 3.7rem 1rem;
+}
+.gongsirongyu{
+    position: absolute;
+    width: 249px;
+    height: 204px;
+    top: 53%;
+    left: 37%;
+    -webkit-transform: perspective(600px);
+}
+/*right-面*/
+.zhouyuejishu1{
+position: absolute;
+    width: 158px;
+    height: 134px;
+    top: 42%;
+    left: 0%;
+    -webkit-transform: perspective(600px);
+}
+.zhuoyuezuzhi{
+position: absolute;
+    width: 196px;
+    height: 134px;
+    top: 42%;
+    left: 22%;
+    -webkit-transform: perspective(600px);
+}
+.lantianjijin{
+    position: absolute;
+    width: 250px;
+    height: 185px;
+    top: 42%;
+    left: 43%;
+    -webkit-transform: perspective(600px);
+}
+.wenhuashengji{
+    position: absolute;
+    width: 249px;
+    height: 100px;
+    top: 44%;
+    left: 79%;
+    -webkit-transform: perspective(600px);
+}
+/*left-面*/
+.womendekehu{
+    position: absolute;
+    width: 145px;
+    height: 101px;
+    top: 46%;
+    left: 11%;
+    -webkit-transform: perspective(600px);
+}
+.zuoyi{
+    position: absolute;
+    width: 161px;
+    height: 207px;
+    top: 42%;
+    left: 38%;
+    -webkit-transform: perspective(600px);
+}
+.zhuoyueshangwu{
+    position: absolute;
+    width: 296px;
+    height: 105px;
+    top: 46%;
+    left: 69%;
+    -webkit-transform: perspective(600px);
+}
+.zhizaonengli{
+position: absolute;
+    width: 225px;
+    height: 105px;
+    top: 58%;
+    left: 63%;
+    -webkit-transform: perspective(600px);
+}
+/*音乐按钮*/
+.musicbtn{
+	position: absolute;
+	top: 0.2rem;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	display: block;
+	width:0.51rem ;
+	z-index: 20;
+}
+.activer{
+	transform-origin: 50% 50%;
+	animation: xuanz linear 3s infinite;
+}
+@keyframes xuanz{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
+/*点击提示*/
+.btnaa{
+	background: url(../qijiandian/tips.png) no-repeat center center;
+	background-size: 0.6rem 0.6rem;
+}
+/*名字*/
+.namea{
+	font-size: 0.26rem;
+	color: white;
+	text-align: center;
+	text-shadow:0 0 0.1rem #0f5b57 ;
+	font-weight: bolder;
+}
+/*排名*/
+.rankbtn{
+	position: absolute;
+	top: 0rem;
+	right: 2.2rem;
+	width: 2.2rem;
+	z-index: 20;
+}
+/*留言*/
+.messagebtn{
+	position: absolute;
+	top: 0rem;
+	right: 0.1rem;
+	width: 2.2rem;
+	z-index: 20;
+}
+/*艾小渝*/
+.xiaoyutips{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto auto;
+	width: 6.96rem;
+	z-index: 20;
+}
+/*卓越技术*/
+.zhouyuejishualert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.zhouyuejishualert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/zhuoyuejishu/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+.zhouyuejishualert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+.zhouyuejishualert .memberbox .contentbox{
+    position: absolute;
+    top: 1.98rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    width: 7rem;
+    height: 3.6rem;
+    overflow: auto;
+}
+.zhouyuejishualert .memberbox .contentbox .img{
+   display: block;
+   width: 100%;
+}
+/*文化的力量*/
+.wenhuadellalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.wenhuadellalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/wenhuadeliliang/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+.wenhuadellalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+.wenhuadellalert .memberbox a{
+    position: absolute;
+    top: 5.1rem;
+    left: 7.8rem;
+    width: 1.8rem;
+    height: 0.8rem;
+    display: block;
+}
+
+/*文化升级*/
+.wenhuasjalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.wenhuasjalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/wenhuasj/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+.wenhuasjalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+.wenhuasjalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.86rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    width: 2.1rem;
+    height: 3.3rem;
+    overflow: hidden;
+}
+.wenhuasjalert .memberbox .contentbox .img{
+   display: block;
+   width: 100%;
+}
+/*大图*/
+.wenhuasjalert1{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.wenhuasjalert1 .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10rem;
+	height: 7.22rem;
+	z-index: 100;
+	overflow: auto;
+}
+.wenhuasjalert1 .memberbox .close{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    display: block;
+    width: 0.47rem;
+    z-index: 2;
+}
+
+.wenhuasjalert1 .memberbox  img{
+    display: block;
+    width: 100%;
+}
+/*点赞排名*/
+.paimingalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.paimingalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/paiming/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .paimingalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .paimingalert .memberbox .contentbox{
+    position: absolute;
+    top: 2.56rem;
+    left: 1.76rem;
+    display: block;
+    width: 7.6rem;
+    height: 3.3rem;
+    overflow: auto;
+}
+ .paimingalert .memberbox .contentbox li{
+    list-style: none;
+    font-size: 0.26rem;
+    color: #baf6e9;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+}
+ .paimingalert .memberbox .contentbox li>div{
+    float: left;
+    height: 0.6rem;
+    line-height: 0.6rem;
+}
+ .paimingalert .memberbox .contentbox li .left{
+    float: left;
+    width: 1.7rem;
+}
+ .paimingalert .memberbox .contentbox li .zhong{
+    float: left;
+    width: 3.8rem;
+}
+ .paimingalert .memberbox .contentbox li .right{
+    float: left;
+    width: 2.05rem;
+}
+/*蓝天计划*/
+.lantianjihuaalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.lantianjihuaalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/lantianjihua/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .lantianjihuaalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .lantianjihuaalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.8rem;
+    left: 1rem;
+    display: block;
+    width: 8.6rem;
+    height: 4.2rem;
+    overflow: auto;
+}
+ .lantianjihuaalert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+/*蓝天项目回顾*/
+.lantianbackalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.lantianbackalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/lantianworkhuigu/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .lantianbackalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .lantianbackalert .memberbox .contentbox{
+    position: absolute;
+    top: 2.2rem;
+    left: 1.76rem;
+    display: block;
+    width: 7.2rem;
+    height: 3.3rem;
+    overflow: auto;
+}
+ .lantianbackalert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+
+/*员工的价值*/
+.ygvaluealert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.ygvaluealert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/yuangongvalue/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .ygvaluealert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .ygvaluealert .memberbox .contentbox{
+    position: absolute;
+    top: 1.7rem;
+    left: 1.6rem;
+    display: block;
+    width: 7.6rem;
+    height: 3.96rem;
+    overflow: auto;
+}
+ .ygvaluealert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+ .ygvaluealert .memberbox p{
+    position: absolute;
+    top: 6.02rem;
+    left: 1.2rem;
+    display: block;
+    width: 8.3rem;
+    height: 0.74rem;
+    font-size: 0.2rem;
+    font-weight: bold;
+    color: #baf6c7;
+    text-align: center;
+}
+/*蓝天基金*/
+.lantianjjalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.lantianjjalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/lantianjijin/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .lantianjjalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .lantianjjalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.86rem;
+    left: 1.7rem;
+    display: block;
+    width: 7.1rem;
+    height: 3.1rem;
+    overflow: auto;
+}
+ .lantianjjalert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+
+/*卓越组织*/
+.zuzhialert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.zuzhialert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/zhouyuezhuzi/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .zuzhialert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .zuzhialert .memberbox .contentbox{
+    position: absolute;
+    top: 1.8rem;
+    left: 1.6rem;
+    display: block;
+    width: 7.6rem;
+    height: 3.7rem;
+    overflow: auto;
+}
+ .zuzhialert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+ .zuzhialert .memberbox p{
+    position: absolute;
+    top: 5.9rem;
+    left: 3rem;
+    display: block;
+    width: 4.9rem;
+    height: 0.5rem;
+    font-size: 0.22rem;
+    font-weight: bold;
+    color: #baf6c7;
+    text-align: center;
+    line-height: 0.5rem;
+}
+/*卓越运营*/
+.yunyingalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.yunyingalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/zhouyueyunyin/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .yunyingalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .yunyingalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.9rem;
+    left: 1.8rem;
+    display: block;
+    width: 7.14rem;
+    height: 3.6rem;
+    overflow: auto;
+}
+ .yunyingalert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+/*卓越商务*/
+.goodsalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.goodsalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/zhouyueshangwu/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .goodsalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .goodsalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.7rem;
+    left: 1.8rem;
+    display: block;
+    width: 7.14rem;
+    height: 3.8rem;
+    overflow: auto;
+}
+ .goodsalert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+/*我们的客户*/
+.ourkehualert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.ourkehualert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/ourskehu/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .ourkehualert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .ourkehualert .memberbox .contentbox{
+    position: absolute;
+    top: 2.24rem;
+    left: 1.76rem;
+    display: block;
+    width: 7.25rem;
+    height: 2.88rem;
+    overflow: auto;
+}
+ .ourkehualert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+/*公司荣誉*/
+.rongyualert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.rongyualert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/rongyu/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .rongyualert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .rongyualert .memberbox .contentbox{
+    position: absolute;
+    top: 1.5rem;
+    left: 0.3rem;
+    display: block;
+    width: 8.8rem;
+    height: 4rem;
+    overflow: hidden;
+}
+ .rongyualert .memberbox .contentbox .left{
+    position: absolute;
+    top: 0;
+    left: 0.18rem;
+    width: 1.4rem;
+    height: 100%;
+}
+.rongyualert .memberbox .contentbox .left img{
+	 position: absolute;
+	width: 1.21rem;
+}
+
+ .rongyualert .memberbox .contentbox .left img:nth-child(1){
+    top: 0.2rem;
+    left: 0;
+}
+ .rongyualert .memberbox .contentbox .left img:nth-child(2){
+    top: 1.1rem;
+    left: 0;
+}
+ .rongyualert .memberbox .contentbox .left img:nth-child(3){
+    top: 2rem;
+    left: 0;
+}
+
+ .rongyualert .memberbox .contentbox .right{
+    position: absolute;
+    top: 0.1rem;
+    left: 1.8rem;
+    width: 6.8rem;
+    height: 3.9rem;
+    overflow: auto;
+}
+ .rongyualert .memberbox .contentbox .right img{
+   display: none;
+   height: 100%;
+}
+ .rongyualert .memberbox .contentbox .right img.active{
+   display: block;
+}
+/*工厂布局*/
+.quanguoalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.quanguoalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/quanguobuju/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .quanguoalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+
+
+/*大事记*/
+.dashijilert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.dashijilert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/dashijian/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .dashijilert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .dashijilert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .dashijilert .memberbox .contentbox{
+    position: absolute;
+    top: 1.9rem;
+    left: 1.76rem;
+    display: block;
+    width: 7.26rem;
+    height:3.64rem;
+    overflow: auto;
+}
+ .dashijilert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+/*社会责任*/
+.shehuizerenlert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.shehuizerenlert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/shehuizeren/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .shehuizerenlert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .shehuizerenlert .memberbox .contentbox{
+    position: absolute;
+    top: 1.9rem;
+    left: 1.76rem;
+    display: block;
+    width: 7.26rem;
+    height: 3.56rem;
+    overflow: auto;
+}
+ .shehuizerenlert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+/*座椅展示*/
+.chairalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.chairalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/zuoyizhanshi/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .chairalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .chairalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.9rem;
+    left: 1.76rem;
+    display: block;
+    width: 7.26rem;
+    height: 3.8rem;
+    overflow: auto;
+}
+ .chairalert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}
+/*发展沿革*/
+.fazhanalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.fazhanalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/lishifazhan/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+.fazhanalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+.fazhanalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.5rem;
+    left: 1.2rem;
+    display: block;
+    width: 8.4rem;
+    height: 4.7rem;
+    overflow: hidden;
+}
+.fazhanalert .memberbox  .title{
+    position: absolute;
+    top: 1.26rem;
+    width: 100%;
+    height: 0.54rem;
+    overflow: hidden;
+    font-size: 0.2rem;
+    text-align: center;
+    color: #bfe1c1;
+}
+.fazhanalert .memberbox .contentbox li{
+   list-style: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: none;
+}
+.fazhanalert .memberbox .contentbox li.active{
+   display: block;
+}
+.fazhanalert .memberbox .contentbox li .videobox{
+    position: absolute;
+    top: 0.44rem;
+    left: 3rem;
+    width: 2.43rem;
+    height: 3.2rem;
+    overflow: hidden;
+}
+.fazhanalert .memberbox .contentbox li .videobox img{
+    display: block;
+    width: 100%;
+}
+.fazhanalert .memberbox .contentbox li p{
+    position: absolute;
+    top: 4.13rem;
+    left: 2.1rem;
+    width: 4rem;
+    height: 0.54rem;
+    overflow: hidden;
+    font-size: 0.22rem;
+    font-weight: bold;
+    text-align: center;
+    color: #d5ffe6;
+    line-height: 0.54rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*左右切换*/
+.fazhanalert .memberbox .contentbox .pre{
+   position: absolute;
+     top: 1.7rem;
+    left: 0.4rem;
+    display: block;
+    width: 0.4rem;
+    z-index: 2;
+}
+.fazhanalert .memberbox .contentbox .next{
+   position: absolute;
+    top: 1.7rem;
+    right: 0.4rem;
+    display: block;
+    width: 0.4rem;
+     z-index: 2;
+}
+/*大图*/
+.fazhanalert1{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.fazhanalert1 .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10rem;
+	height: 7.22rem;
+	z-index: 100;
+}
+.fazhanalert1 .memberbox .close{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    display: block;
+    width: 0.47rem;
+    z-index: 2;
+}
+.fazhanalert1 .memberbox li{
+	list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.fazhanalert1 .memberbox li.active{
+	display: block;
+}
+.fazhanalert1 .memberbox li img{
+    display: block;
+    width: 100%;
+}
+
+/*技术中心历程*/
+.jishuhistoryalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.jishuhistoryalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/tcroadmap/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+.jishuhistoryalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+.jishuhistoryalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.5rem;
+    left: 1.2rem;
+    display: block;
+    width: 8.4rem;
+    height: 4.7rem;
+    overflow: hidden;
+}
+.jishuhistoryalert .memberbox  .title{
+    position: absolute;
+    top: 1.26rem;
+    width: 100%;
+    height: 0.54rem;
+    overflow: hidden;
+    font-size: 0.2rem;
+    text-align: center;
+    color: #bfe1c1;
+}
+.jishuhistoryalert .memberbox .contentbox li{
+   list-style: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: none;
+}
+.jishuhistoryalert .memberbox .contentbox li.active{
+   display: block;
+}
+.jishuhistoryalert .memberbox .contentbox li .videobox{
+    position: absolute;
+    top: 0.44rem;
+    left: 3rem;
+    width: 2.43rem;
+    height: 3.2rem;
+    overflow: hidden;
+}
+.jishuhistoryalert .memberbox .contentbox li .videobox img{
+    display: block;
+    width: 100%;
+}
+.jishuhistoryalert .memberbox .contentbox li p{
+    position: absolute;
+    top: 4.13rem;
+    left: 2.1rem;
+    width: 4rem;
+    height: 0.54rem;
+    overflow: hidden;
+    font-size: 0.22rem;
+    font-weight: bold;
+    text-align: center;
+    color: #d5ffe6;
+    line-height: 0.54rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*左右切换*/
+.jishuhistoryalert .memberbox .contentbox .pre{
+   position: absolute;
+     top: 1.7rem;
+    left: 0.4rem;
+    display: block;
+    width: 0.4rem;
+    z-index: 2;
+}
+.jishuhistoryalert .memberbox .contentbox .next{
+   position: absolute;
+    top: 1.7rem;
+    right: 0.4rem;
+    display: block;
+    width: 0.4rem;
+     z-index: 2;
+}
+/*大图*/
+.jishuhistoryalert1{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.jishuhistoryalert1 .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10rem;
+	height: 7.22rem;
+	z-index: 100;
+}
+.jishuhistoryalert1 .memberbox .close{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    display: block;
+    width: 0.47rem;
+    z-index: 2;
+}
+.jishuhistoryalert1 .memberbox li{
+	list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.jishuhistoryalert1 .memberbox li.active{
+	display: block;
+}
+.jishuhistoryalert1 .memberbox li img{
+    display: block;
+    width: 100%;
+}
+/*祝福视频*/
+.wishalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.wishalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/wishvideo/bg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .wishalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .wishalert .memberbox .contentbox{
+    position: absolute;
+    top: 1.5rem;
+    left: 1.2rem;
+    display: block;
+    width: 8.4rem;
+    height: 4.7rem;
+    overflow: hidden;
+}
+ .wishalert .memberbox .contentbox li{
+   list-style: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: none;
+}
+ .wishalert .memberbox .contentbox li.active{
+   display: block;
+}
+ .wishalert .memberbox .contentbox li .videobox{
+    position: absolute;
+    top: 0.38rem;
+    left: 1.32rem;
+    width: 5.73rem;
+    height: 3.22rem;
+    overflow: hidden;
+}
+ .wishalert .memberbox .contentbox li .videobox video{
+    display: block;
+    width: 100%;
+}
+ .wishalert .memberbox .contentbox li p{
+    position: absolute;
+    top: 4.13rem;
+    left: 1.32rem;
+    width: 5.6rem;
+    height: 0.54rem;
+    overflow: hidden;
+    font-size: 0.22rem;
+    font-weight: bold;
+    text-align: center;
+    color: #d5ffe6;
+    line-height: 0.54rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*左右切换*/
+ .wishalert .memberbox .contentbox .pre{
+   position: absolute;
+     top: 1.7rem;
+    left: 0rem;
+    display: block;
+    width: 0.4rem;
+    z-index: 2;
+}
+ .wishalert .memberbox .contentbox .next{
+   position: absolute;
+    top: 1.7rem;
+    right: 0rem;
+    display: block;
+    width: 0.4rem;
+     z-index: 2;
+}
+/*制造能力*/
+.makepoweralert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.makepoweralert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/makepower/makepoerbg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .makepoweralert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .makepoweralert .memberbox .contentbox{
+    position: absolute;
+    top: 1.9rem;
+    left: 1.76rem;
+    display: block;
+    width: 7.26rem;
+    height: 3.1rem;
+    overflow: auto;
+}
+ .makepoweralert .memberbox .contentbox img{
+    display: block;
+    height: 100%;
+}

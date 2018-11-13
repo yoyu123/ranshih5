@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html data-use-rem="750">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="x5-orientation" content="landscape">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="HandheldFriendly" content="true">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta http-equiv="Cache" content="no-cache">
+		<title>工会</title>
+		<!--引入css样式-->
+		<link rel="stylesheet" type="text/css" href="miaotao/component.css"/>
+		<link rel="stylesheet" type="text/css" href="miaotao/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="css/gonghui.css?v=201813"/>
+		<!--引入jquery样式-->
+		
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/config.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script src="miaotao/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<script>
+	!function(win){var doc=win.document,html=doc.documentElement,option=html.getAttribute("data-use-rem");if(null!==option){var baseWidth="NaN"==parseInt(option).toString()?750:parseInt(option),grids=baseWidth/100,clientWidth=html.clientWidth||320;html.style.fontSize=clientWidth/grids+"px";var testDom=document.createElement("div"),testDomWidth=0,adjustRatio=0;testDom.style.cssText="height:0;width:1rem;",doc.body.appendChild(testDom);var calcTestDom=function(){if(testDomWidth=testDom.offsetWidth,testDomWidth!==Math.round(clientWidth/grids)){adjustRatio=clientWidth/grids/testDomWidth;var reCalcRem=clientWidth*adjustRatio/grids;html.style.fontSize=reCalcRem+"px"}else doc.body.removeChild(testDom)};setTimeout(calcTestDom,20);var reCalc=function(){var newCW=html.clientWidth;newCW!==clientWidth&&(clientWidth=newCW,html.style.fontSize=newCW*(adjustRatio?adjustRatio:1)/grids+"px")};if(reCalc(),doc.addEventListener){var resizeEvt="orientationchange"in win?"orientationchange":"resize";win.addEventListener(resizeEvt,reCalc,!1),doc.addEventListener("DOMContentLoaded",reCalc,!1)}}}(window);
+</script>
+	<div id="home" class="wrap">
+		<!--控制横屏-->
+		<script type="text/javascript">
+			var detectOrient = function() {
+			var width = document.documentElement.clientWidth,
+			height = document.documentElement.clientHeight,
+			$wrapper = document.getElementById("home"),
+			style = "";
+			 
+			if( width >= height ){ // 横屏
+			style += "width:" + width + "px;"; // 注意旋转后的宽高切换
+			style += "height:" + height + "px;";
+			style += "-webkit-transform: rotate(0); transform: rotate(0);";
+			style += "-webkit-transform-origin: 0 0;";
+			style += "transform-origin: 0 0;";
+			}
+			else{ // 竖屏
+			style += "width:" + height + "px;";
+			style += "height:" + width + "px;";
+			style += "-webkit-transform: rotate(90deg); transform: rotate(90deg);";
+			// 注意旋转中点的处理
+			style += "-webkit-transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+			style += "transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+			}
+			$wrapper.style.cssText = style;
+			}
+			window.onresize = detectOrient;
+			detectOrient();
+		</script>
+		<!--竖屏提示-->
+			<div id="shutips">
+				<img src="img/hptips.png"/>
+			</div>
+		<!--loading-->
+	  <div class="load-box">
+	  	<img src="img/load_logo.gif" class="load-logo"/>
+	  	<div class="progress-box">
+	  		<img src="img/load_loading.png" class="load-tip"/>
+	  		<p class="progress"><span class="pao"></span>
+	  			<img src="img/load_loading1.png"/>
+	  		</p>
+	  		<p class="process_text">正在加载请稍后</p>
+	  	</div>
+	  	<img src="img/login_btn.png" class="load-login"/>
+	  </div>
+	  <!--主页面-->
+	  <div class="item-box">
+	  	<div>
+		  	<!--标题-->
+		  	<img src="img/gonghui.jpg" class="item-zhu"/>
+		  		<!--返回-->
+		  	<img src="img/back.png" class="back"/>
+		  	<!--点赞-->
+		  	<div class="likebox">
+		  		<button class="likebtn cbutton cbutton--complex cbutton--box cbutton--box-color-4 cbutton--effect-dejan">
+<span class="cbutton__helper cbutton__helper--first"><img src="miaotao/splash_1.svg#color-4" /></span>
+<span class="cbutton__helper cbutton__helper--second"><img src="miaotao/splash_2.svg#color-4" /></span>
+</button><span class="mun">0</span></div>
+		  	<!--简介-->
+		   <div class="item-jianjie"></div>
+		   <!--义卖-->
+		   <div class="item-yimai"></div>
+		   <!--大事记-->
+		   <div class="item-dashiji"></div>
+		   <!--荣誉-->
+		   <div class="item-rongyu"></div>
+		   <!--视频-->
+		   <div class="item-video"></div>
+		   <!--成员-->
+		   <div class="item-member"></div>
+		   <!--欢迎语-->
+		   <div class="welcome"></div>
+		   <img src="welcome/gonghui.png" class="welimg"/>
+	   </div>
+	  </div>
+	  <!--简介弹窗-->
+	    <div class="jianjiebox">
+	    	<div class="memberbox">
+				<p class="title">工会</p>
+				<img src="img/jieshaoclose.png" class="close"/>
+				<div class="contentbox">
+					<p>欢迎加入重庆延锋安道拓汽车部件系统有限公司！公司将致力于为您创造一个健康、安全、舒适的工作环境，确保您及时了解公司有关信息的同时，公司工会也将把工会组织努力建设成为组织健全、维权到位、工作积极、活动丰富、作用明显、职工信赖的职工之家！</p>
+					<p>工会工作在传统做法中锐意创新，与时俱进。2014年以来，伴随幸福家文化的启动，工会通过工会基础知识培训、人文教育、光盘行动、读书俱乐部、单身联谊会、员工交流会、员工子女入学平台搭建、工厂劳动竞赛、环保快闪、外派员工关怀、重阳孝亲活动、公司好声音、公司运动会、工会关怀慰问、干部培训及团建等活动，为员工创造了快乐的工作环境和快乐的生活氛围，为公司人才保留奠定了基础，为公司和谐的劳动关系维护创造了条件，多次荣获区级、市级模范职工之家、工人先锋号和先进工会干部的殊荣；同时还荣获过全国巾帼标兵岗、全国先进工会工作者等个人荣誉称号。</p>
+					<p>重庆延锋安道拓汽车部件系统有限公司工会委员会成立于2006年5月12日，迄今走过了12年的历程，公司工会下设了工会经费审查委员会和女职工委员会，公司员工总数为4407人，工会会员共有4398人，下设16个基层分工会，会员占员工总数的比例为99.7%。</p>
+					
+				</div>
+			</div>
+	    </div>
+	     <!--义卖弹窗-->
+	    <div class="yimaibox">
+	    	<div class="memberbox">
+				<p class="title">工会</p>
+				<img src="img/jieshaoclose.png" class="close"/>
+				<div class="contentbox">
+					<ul>
+						<li>
+							<a href="https://weidian.com/item.html?itemID=2620392832">
+								<div class="imgbox"><img src="gonghui/ym1.png"/></div>
+							    <div class="linkbtn">红木书签/金属书签/邮费到付/线下自提</div>
+							</a>
+						</li>
+						<li>
+							<a href="https://weidian.com/item.html?itemID=2620410112">
+								<div class="imgbox"><img src="gonghui/ym2.png"/></div>
+							    <div class="linkbtn">重庆风光剪纸册（简装）/包邮</div>
+							</a>
+						</li>
+						<li>
+							<a href="https://weidian.com/item.html?itemID=2620344779">
+								<div class="imgbox"><img src="gonghui/ym3.png"/></div>
+							    <div class="linkbtn">吊脚楼礼品画框/包邮</div>
+							</a>
+						</li>
+						<li>
+							<a href="https://weidian.com/item.html?itemID=2620377398">
+								<div class="imgbox"><img src="gonghui/ym4.png"/></div>
+							    <div class="linkbtn">镜片剪纸/包邮</div>
+							</a>
+						</li>
+						<li>
+							<a href="https://weidian.com/item.html?itemID=2620341089">
+								<div class="imgbox"><img src="gonghui/ym5.png"/></div>
+							    <div class="linkbtn">雅琅晶 摆件/包邮</div>
+							</a>
+						</li>
+						<li>
+							<a href="https://weidian.com/item.html?itemID=2620399146">
+								<div class="imgbox"><img src="gonghui/ym6.png"/></div>
+							    <div class="linkbtn">盛世繁华/魅力重庆漆雕笔筒/包邮</div>
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+	    </div>
+	     <!--大事记弹窗-->
+	    <div class="dashijibox">
+	    	<div class="memberbox">
+				<p class="title">工会</p>
+				<img src="img/jieshaoclose.png" class="close"/>
+				<div class="contentbox">
+				    <img src="gonghui/dashiji.png"/>
+				</div>
+			</div>
+	    </div>
+		<!--荣誉弹窗-->
+		 <div class="rongyubox">
+	    	<div class="memberbox">
+				<p class="title">工会</p>
+				<img src="img/jieshaoclose.png" class="close"/>
+				<div class="contentbox">
+					<div class="imgbox">
+						<ul>
+							<li class="active">
+								<div class="img"><img src="gonghui/ry1.jpg"/></div>
+								<p>安康杯优胜企业-2005年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry2.jpg"/></div>
+								<p>安康杯优秀组织奖-2006年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry3.jpg"/></div>
+								<p>区总工工会优秀工会工作者奖章-2011年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry4.jpg"/></div>
+								<p>区总工会工人先锋号-2009年</p>
+							</li>
+							
+							<li>
+								<div class="img"><img src="gonghui/ry5.jpg"/></div>
+								<p>区总工会两个普遍推进先进工作-2011年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry6.jpg"/></div>
+								<p>区总工会模范职工之家-2009年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry7.jpg"/></div>
+								<p>区总工会模范职工之家-2011年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry8.jpg"/></div>
+								<p>区总工会十佳技术能手-2009年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry9.jpg"/></div>
+								<p>区总工会优秀工会工作者-2011年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry10.jpg"/></div>
+								<p>区总工人先锋号-2014年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry11.jpg"/></div>
+								<p>区总模范职工之家-2014年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry12.jpg"/></div>
+								<p>区总五一巾帼标兵岗-2011年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry13.jpg"/></div>
+								<p>全国优秀工会工作者-2015年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry14.jpg"/></div>
+								<p>全国优秀工会工作者奖章-2015年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry15.jpg"/></div>
+								<p>重庆市工人先锋号-2011年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry16.jpg"/></div>
+								<p>重庆市模范职工之家-2015年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry17.jpg"/></div>
+								<p>重庆市五一巾帼标兵岗-2013年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry18.jpg"/></div>
+								<p>重庆市五一劳动奖章-2014年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry19.jpg"/></div>
+								<p>重庆市先进女职工组织-2013年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry20.jpg"/></div>
+								<p>重庆市总工会财务会计工作先进工作单位-2008年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry21.jpg"/></div>
+								<p>重庆市总工会基层改革市级示范单位-2017年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry22.jpg"/></div>
+								<p>重庆市总工会模范职工之家-2007年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry23.jpg"/></div>
+								<p>重庆市总工会五一劳动奖状-2018年</p>
+							</li>
+							<li>
+								<div class="img"><img src="gonghui/ry24.jpg"/></div>
+								<p>重庆市总工会优胜企业-2005年</p>
+							</li>
+						</ul>
+					</div>
+					<img src="img/prel.png" class="prebtn"/>
+				    <img src="img/nextl.png" class="nextbtn"/>
+				</div>
+			</div>
+	    </div>
+	     <!--视频弹窗-->	
+		<div class="videoalert">
+			<div class="memberbox">
+				<p class="title">工会</p>
+				<img src="img/jieshaoclose.png" class="close"/>
+				<div class="contentbox">
+					<a href="https://v.qq.com/x/page/p0786qb0l5v.html">工会祝福</a>
+				</div>
+			</div>
+			</div>
+		<!--成员弹窗-->	
+		<div class="memberalert">
+			<div class="memberbox">
+				<p class="title">工会</p>
+				<img src="img/jieshaoclose.png" class="close"/>
+				<div class="contentbox">
+				   <div class="left">
+				  <img src="img/jiti1.png" class="active2"/>
+				   </div>
+				   <div class="right">
+				   	 	<ul class="jiti">
+				   	 		<li>
+				   		  <div class="imgbox"><img src="gonghui/cy.jpg"/></div>
+				   		  <p>集体合照</p>
+				   		</li>
+				   		
+				   	 	</ul>
+				   </div>
+				</div>
+			</div>
+		</div>
+		
+		<!--成员大图-->
+		<div class="bigalert">
+			<div class="box">
+				<img src="img/pre.png" class="prebtn"/>
+				<img src="img/next.png" class="nextbtn"/>
+				<img src="img/close.png" class="close"/>
+			</div>
+		</div>
+	</div>
+	<script src="miaotao/classie.js"></script>
+	
+<script type="text/javascript">
+
+$(function(){
+	
+	initpage(6,'工会');
+	getlike(6,'工会');
+	
+	 //loading page
+        var timer = null,
+            angle = 1,
+            speed = 0;
+        (function increase() {
+          timer = setTimeout(increase, 10);
+          var percent = speed.toFixed(0);
+          $(".pao").width(percent+"%");
+//        $('#process_num').text(percent + '%');
+          if(percent >= 0 && percent < 50) {
+            $('.process_text').text('正在加载请稍后');
+          } else if(percent >= 50 && percent < 70) {
+            $('.process_text').text('象舞之年 创见无限');
+          } else if(percent >= 70 && percent < 87) {
+            $('.process_text').text('One CQYFAS，One Goal');
+          } else if(percent >= 87 && percent < 100) {
+            $('.process_text').text('我们大于我');
+          }
+          if(speed > angle * 100) clearTimeout(timer, init());
+          speed += 0.25;
+        }());
+        
+        function init() {
+         $(".load-box").fadeOut();
+         $(".welimg").show();
+    	setTimeout(function(){
+    		$(".welimg").hide();
+    	},2000);
+        }
+	//放回上一页
+	$(".back").click(function(){
+		location.href="index.html";
+	})
+//	欢迎语
+    $(".welcome").click(function(){
+    	$(".welimg").show();
+    	setTimeout(function(){
+    		$(".welimg").hide();
+    	},2000);
+    });
+	//打开简介弹窗
+	$(".item-box .item-jianjie").click(function(){
+		$(".jianjiebox").fadeIn();
+	})
+	//关闭简介弹窗
+	$(".jianjiebox .close").click(function(){
+		$(".jianjiebox").fadeOut();
+	})
+	//打开义卖弹窗
+	$(".item-box .item-yimai").click(function(){
+		$(".yimaibox").fadeIn();
+	})
+	//关闭义卖弹窗
+	$(".yimaibox .close").click(function(){
+		$(".yimaibox").fadeOut();
+	})
+	//打开大事记弹窗
+	$(".item-box .item-dashiji").click(function(){
+		$(".dashijibox").fadeIn();
+	})
+	//关闭大事记弹窗
+	$(".wrap .dashijibox .close").click(function(){
+		$(".dashijibox").fadeOut();
+	})
+	//打开部门荣誉弹窗
+	$(".item-box .item-rongyu").click(function(){
+		$(".rongyubox").fadeIn();
+	})
+	//关闭部门荣誉弹窗
+	$(".wrap .rongyubox .close").click(function(){
+		$(".rongyubox").fadeOut();
+	})
+		 //荣誉图片切换
+		 var ryindex=0;
+    $(".rongyubox  .prebtn").click(function(){
+   	$(".rongyubox ul li").eq(ryindex).fadeOut();
+   	  if(ryindex==0){
+   	  	ryindex=$(".rongyubox ul li").length-1;
+   	  }else{
+   	  	ryindex--;
+   	  }
+   	  $(".rongyubox ul li").eq(ryindex).fadeIn();
+   })
+   $(".rongyubox .nextbtn").click(function(){
+   	$(".rongyubox ul li").eq(ryindex).fadeOut();
+   	  if(ryindex==($(".rongyubox ul li").length-1)){
+   	  	ryindex=0;
+   	  }else{
+   	  	ryindex++;
+   	  }
+   	  $(".rongyubox ul li").eq(ryindex).fadeIn();
+})
+   
+   	//打开祝福弹窗
+	$(".item-box .item-video").click(function(){
+		location.href="http://1258017916.vod2.myqcloud.com/145341cavodcq1258017916/d0c173d05285890782742872115/gfQM6NutOm8A.mp4";
+	})
+
+	//打开成员照片弹窗
+	$(".item-box .item-member").click(function(){
+		$(".memberalert").fadeIn();
+	})
+	//关闭照片切换
+	$(".memberalert .close").click(function(){
+		$(".memberalert").fadeOut();
+	})
+	//打开单个图片
+	var shuindex='';
+	$(".jiti li").click(function(){
+		$(".bigalert .box .imgbox").remove();
+		shuindex=$(this).index();
+		var shu=$(".jiti li");
+		var data='';
+		for (var i=0;i<shu.length;i++) {
+			var src=shu.eq(i).find('.imgbox').find('img').attr('src');
+			data+="<div class='imgbox'><img src='"+src+"'/></div>";
+		}
+		$(".bigalert .box").append(data);
+		$(".bigalert").fadeIn();
+		$(".bigalert .box .imgbox").css("width","8.23rem")
+		$(".bigalert .box .imgbox").eq(shuindex).show().siblings(".imgbox").hide();
+	})
+   //当个图片切换
+    $(".bigalert .box .prebtn").click(function(){
+   	$(".bigalert .box .imgbox").eq(shuindex).fadeOut();
+   	  if(shuindex==0){
+   	  	shuindex=$(".bigalert .box .imgbox").length-1;
+   	  }else{
+   	  	shuindex--;
+   	  }
+   	  $(".bigalert .box .imgbox").eq(shuindex).fadeIn();
+   })
+   $(".bigalert .box .nextbtn").click(function(){
+   	$(".bigalert .box .imgbox").eq(shuindex).fadeOut();
+   	  if(shuindex==($(".bigalert .box .imgbox").length-1)){
+   	  	shuindex=0;
+   	  }else{
+   	  	shuindex++;
+   	  }
+   	  $(".bigalert .box .imgbox").eq(shuindex).fadeIn();
+})
+   //关闭单个图片弹窗
+   $(".bigalert .box .close").click(function(){
+   	   $(".bigalert").fadeOut();
+   })
+})
+</script>
+	</body>
+	<script>
+			(function() {
+
+				// http://stackoverflow.com/a/11381730/989439
+				function mobilecheck() {
+					var check = false;
+					(function(a){if(/(android|ipad|playbook|silk|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+					return check;
+				}
+
+				var support = { animations : Modernizr.cssanimations },
+					animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
+					animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
+					onEndAnimation = function( el, callback ) {
+						var onEndCallbackFn = function( ev ) {
+							if( support.animations ) {
+								if( ev.target != this ) return;
+								this.removeEventListener( animEndEventName, onEndCallbackFn );
+							}
+							if( callback && typeof callback === 'function' ) { callback.call(); }
+						};
+						if( support.animations ) {
+							el.addEventListener( animEndEventName, onEndCallbackFn );
+						}
+						else {
+							onEndCallbackFn();
+						}
+					},
+					eventtype = mobilecheck() ? 'touchstart' : 'click';
+
+				[].slice.call( document.querySelectorAll( '.cbutton' ) ).forEach( function( el ) {
+					el.addEventListener( eventtype, function( ev ) {
+						classie.add( el, 'cbutton--click' );
+						onEndAnimation( classie.has( el, 'cbutton--complex' ) ? el.querySelector( '.cbutton__helper' ) : el, function() {
+							classie.remove( el, 'cbutton--click' );
+						} );
+					} );
+				} );
+
+			})();
+		</script>
+</html>

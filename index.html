@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html data-use-rem="750">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="x5-orientation" content="landscape">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="HandheldFriendly" content="true">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta http-equiv="Cache" content="no-cache">
+		<title>艾小渝的店</title>
+		<!--引入css样式-->
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=201812"/>
+		<!--引入jquery样式-->
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	</head>
+	<body>
+		<script>
+	!function(win){var doc=win.document,html=doc.documentElement,option=html.getAttribute("data-use-rem");if(null!==option){var baseWidth="NaN"==parseInt(option).toString()?750:parseInt(option),grids=baseWidth/100,clientWidth=html.clientWidth||320;html.style.fontSize=clientWidth/grids+"px";var testDom=document.createElement("div"),testDomWidth=0,adjustRatio=0;testDom.style.cssText="height:0;width:1rem;",doc.body.appendChild(testDom);var calcTestDom=function(){if(testDomWidth=testDom.offsetWidth,testDomWidth!==Math.round(clientWidth/grids)){adjustRatio=clientWidth/grids/testDomWidth;var reCalcRem=clientWidth*adjustRatio/grids;html.style.fontSize=reCalcRem+"px"}else doc.body.removeChild(testDom)};setTimeout(calcTestDom,20);var reCalc=function(){var newCW=html.clientWidth;newCW!==clientWidth&&(clientWidth=newCW,html.style.fontSize=newCW*(adjustRatio?adjustRatio:1)/grids+"px")};if(reCalc(),doc.addEventListener){var resizeEvt="orientationchange"in win?"orientationchange":"resize";win.addEventListener(resizeEvt,reCalc,!1),doc.addEventListener("DOMContentLoaded",reCalc,!1)}}}(window);
+</script>
+	<div id="home" class="wrap">
+		<!--控制横屏-->
+		<script type="text/javascript">
+			var detectOrient = function() {
+			var width = document.documentElement.clientWidth,
+			height = document.documentElement.clientHeight,
+			$wrapper = document.getElementById("home"),
+			style = "";
+			 
+			if( width >= height ){ // 横屏
+			style += "width:" + width + "px;"; // 注意旋转后的宽高切换
+			style += "height:" + height + "px;";
+			style += "-webkit-transform: rotate(0); transform: rotate(0);";
+			style += "-webkit-transform-origin: 0 0;";
+			style += "transform-origin: 0 0;";
+			}
+			else{ // 竖屏
+			style += "width:" + height + "px;";
+			style += "height:" + width + "px;";
+			style += "-webkit-transform: rotate(90deg); transform: rotate(90deg);";
+			// 注意旋转中点的处理
+			style += "-webkit-transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+			style += "transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+			}
+			$wrapper.style.cssText = style;
+			}
+			window.onresize = detectOrient;
+			detectOrient();
+		</script>
+		<!--竖屏提示-->
+			<div id="shutips">
+				<img src="img/hptips.png"/>
+			</div>
+		<!--loading-->
+	  <div class="load-box">
+	  	<img src="img/load_logo.gif" class="load-logo"/>
+	  	<div class="progress-box">
+	  		<img src="img/load_loading.png" class="load-tip"/>
+	  		<p class="progress"><span class="pao"></span>
+	  			<img src="img/load_loading1.png"/>
+	  		</p>
+	  	    <p class="process_text">正在加载请稍后</p>
+	  	</div>
+	  	<img src="img/login_btn.png" class="load-login"/>
+	  </div>
+	  <!--主页面-->
+	  <div class="item-box">
+	  	<div>
+		  	<!--标题-->
+		  	<img  class="item-zhu" src="img/bgindex.png"/>
+		  	<img src="img/index-0.png" class="item-ci"/>
+		  	<!--背景音乐-->	
+		  	<img src="img/musicbtn.png" class="musicbtn"/>
+		  	<audio src="index/bg.mp3" id="music" preload="auto" loop="loop"></audio>
+		  		<!--面套-->
+		   <div class="item-miantao" ></div>
+		  	<!--采购部-->
+		   <div class="item-caigou"></div>
+		   <!--工会-->
+		   <div class="item-gonghui" ></div>
+		    <div class="item-gonghui1" ></div>
+		     <!--福特-->
+		   <div class="item-fute"></div>
+		      <!--人力-->
+		   <div class="item-renli" ></div>
+		      <!--沃尔沃-->
+		   <div class="item-woerwo" ></div>
+		     <!--金属-->
+		   <div class="item-jinshu"></div>
+		    <!--华南-->
+		   <div class="item-huanan" ></div>
+		   <div class="item-huanan1" ></div>
+		      <!--西南-->
+		   <div class="item-xinan"></div>
+		    <!--财务-->
+		   <div class="item-caiwu" ></div>
+		    <!--执委-->
+		   <div class="item-zhiwei"></div>
+		    <!--技术-->
+		   <div class="item-jishu" ></div>
+		    <!--质量-->
+		   <div class="item-zhiliang" ></div>
+		    <!--实践-->
+		   <div class="item-shijian"></div>
+		   <!--业务-->
+		   <div class="item-yewu"></div>
+		    <!--项目-->
+		   <div class="item-xiangmu"></div>
+		    <!--信息技术-->
+		   <div class="item-xinxi" ></div>
+		    <!--发泡-->
+		   <div class="item-fapao" ></div>
+		   <!--制造-->
+		   <div class="item-zhizao"></div>
+		   <!--旗舰店-->
+		   <div class="item-qijiandian"></div>
+		   <!--物体-->
+		  		<!--面套-->
+		   <img class="img1" src="img/index-miantao.png">
+		  	<!--采购部-->
+		   <img class="img2" src="img/index-cg.png">
+		   <!--工会-->
+		   <img class="img3" src="img/index-gh.png">
+		     <!--福特-->
+		   <img class="img4" src="img/index-ft.png">
+		      <!--人力-->
+		   <img class="img5" src="img/index-hr.png">
+		      <!--沃尔沃-->
+		   <img class="img6" src="img/index-woerwo.png">
+		     <!--金属-->
+		   <img class="img7" src="img/index-jinshu.png">
+		    <!--华南-->
+		   <img class="img8" src="img/index-hn.png">
+		      <!--西南-->
+		   <img class="img9" src="img/index-xinan.png">
+		    <!--财务-->
+		   <img class="img10" src="img/index-cw.png">
+		    <!--执委-->
+		   <img class="img11" src="img/index-zhiwei.png">
+		    <!--技术-->
+		   <img class="img12" src="img/index-js.png"> 
+		    <!--质量-->
+		   <img class="img13" src="img/index-zhiliang.png">
+		    <!--实践-->
+		   <img class="img14" src="img/index-shijian.png">
+		   <!--业务-->
+		   <img class="img15" src="img/index-yewufaz.png">
+		    <!--项目-->
+		   <img class="img16" src="img/index-xiangmu.png">
+		    <!--信息技术-->
+		   <img class="img17" src="img/index-xinxi.png">
+		    <!--发泡-->
+		   <img class="img18" src="img/index-fp.png">
+		   <!--制造-->
+		   <img class="img19" src="img/index-zhizao.png">
+		   <!--旗舰店-->
+		    <img class="img20" src="img/index-qjd.gif">
+		     <!--气球-->
+		     <img src="img/qiqiu.png" class="qiqiu"/>
+		      <!--气球-->
+		     <img src="img/index-fj.png" class="fenji"/>
+		     <!--进入按钮-->
+		     <img class="btn miantao" src="index/miantao.png"/>
+		     <img class="btn caigou" src="index/caigou.png"/>
+		     <img class="btn gonghui" src="index/gonghui.png"/>
+		     <img class="btn fute" src="index/fute.png"/>
+		     <img class="btn renli" src="index/renli.png"/>
+		     <img class="btn woerwo" src="index/woerwo.png"/>
+		     <img class="btn jinshu" src="index/jinshujian.png"/>
+		     <img class="btn huanan" src="index/huanan.png"/>
+		     <img class="btn xinan" src="index/xinan.png"/>
+		     <img class="btn caiwu" src="index/caiwu.png"/>
+		     <img class="btn zhiwei" src="index/zhiwei.png"/>
+		     <img class="btn jishu" src="index/jishuzx.png"/>
+		     <img class="btn zhiliang" src="index/zhiliang.png"/>
+		     <img class="btn shijian" src="index/shijian.png"/>
+		     <img class="btn yewu" src="index/fazhanyewu.png"/>
+		     <img class="btn xiangmu" src="index/xiangmu.png"/>
+		     <img class="btn xinxi" src="index/xinxi.png"/>
+		     <img class="btn fapao" src="index/fapao.png"/>
+		     <img class="btn zhizao" src="index/zhizao.png"/>
+		     <img class="btn qijiandian" src="index/qijiandian.png"/>
+		  
+	   </div>
+	  </div>
+	 
+	</div>
+	 <!--ios自动播放-->
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script type="text/javascript">
+$(function(){
+	initpage(-1,'首页');
+	
+	 //loading page
+        var timer = null,
+            angle = 1,
+            speed = 0;
+        (function increase() {
+          timer = setTimeout(increase, 10);
+          var percent = speed.toFixed(0);
+          $(".pao").width(percent+"%");
+//        $('#process_num').text(percent + '%');
+          if(percent >= 0 && percent < 50) {
+            $('.process_text').text('正在加载请稍后');
+          } else if(percent >= 50 && percent < 70) {
+            $('.process_text').text('象舞之年 创见无限');
+          } else if(percent >= 70 && percent < 87) {
+            $('.process_text').text('One CQYFAS，One Goal');
+          } else if(percent >= 87 && percent < 100) {
+            $('.process_text').text('我们大于我');
+          }
+          if(speed > angle * 100) clearTimeout(timer, init());
+          speed += 0.25;
+        }());
+        
+        function init() {
+         $(".load-box").fadeOut();
+          //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+     document.getElementById('music').play(); 
+     $(".musicbtn").addClass("activer");
+    //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
+    document.addEventListener("WeixinJSBridgeReady", function () { 
+        document.getElementById('music').play(); 
+         $(".musicbtn").addClass("activer");
+       
+    }, false); 
+        }
+	 //音乐播放按钮
+    		var audio1=document.getElementById("music");
+    		$(".musicbtn").click(function(){
+    			if(audio1.paused){
+    				audio1.play();
+    				$(".musicbtn").addClass("activer");
+    			}else{
+    				audio1.pause();
+    				$(".musicbtn").removeClass("activer");
+    			}
+    		});
+	//面套链接
+	$(".item-box .item-miantao").click(function(){
+		$(".img1").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".miantao").fadeIn(500);
+			$(".img1").removeClass("imgactive");
+		},1000);
+		
+	})
+	//采购链接
+	$(".item-box .item-caigou").click(function(){
+		$(".img2").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".caigou").fadeIn(500);
+			$(".img2").removeClass("imgactive");
+		},1000);
+		
+	})
+	//工会链接
+	$(".item-box .item-gonghui").click(function(){
+		$(".img3").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".gonghui").fadeIn(500);
+			$(".img3").removeClass("imgactive");
+		},1000);
+		
+	})
+	$(".item-box .item-gonghui1").click(function(){
+		$(".img3").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".gonghui").fadeIn(500);
+			$(".img3").removeClass("imgactive");
+		},1000);
+		
+	})
+	//福特链接
+	$(".item-box .item-fute").click(function(){
+		$(".img4").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".fute").fadeIn(500);
+			$(".img4").removeClass("imgactive");
+		},1000);
+		
+	})
+	//人力链接
+	$(".item-box .item-renli").click(function(){
+		$(".img5").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".renli").fadeIn(500);
+			$(".img5").removeClass("imgactive");
+		},1000);
+		
+	})
+	//沃尔沃链接
+	$(".item-box .item-woerwo").click(function(){
+		$(".img6").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".woerwo").fadeIn(500);
+			$(".img6").removeClass("imgactive");
+		},1000);
+		
+	})
+	//金属件单元链接
+	$(".item-box .item-jinshu").click(function(){
+		$(".img7").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".jinshu").fadeIn(500);
+			$(".img7").removeClass("imgactive");
+		},1000);
+		
+	})
+	//华南链接
+	$(".item-box .item-huanan").click(function(){
+		$(".img8").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".huanan").fadeIn(500);
+			$(".img8").removeClass("imgactive");
+		},1000);
+		
+	})
+	$(".item-box .item-huanan1").click(function(){
+		$(".img8").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".huanan").fadeIn(500);
+			$(".img8").removeClass("imgactive");
+		},1000);
+	})
+	//西南链接
+	$(".item-box .item-xinan").click(function(){
+		$(".img9").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".xinan").fadeIn(500);
+			$(".img9").removeClass("imgactive");
+		},1000);
+	})
+	//财务链接
+	$(".item-box .item-caiwu").click(function(){
+		$(".img10").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".caiwu").fadeIn(500);
+			$(".img10").removeClass("imgactive");
+		},1000);
+	})
+
+	//执委链接
+	$(".item-box .item-zhiwei").click(function(){
+		$(".img11").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+              $(".zhiwei").fadeIn(500);
+              $(".img11").removeClass("imgactive");
+		},1000);
+	})
+	//技术链接
+	$(".item-box .item-jishu").click(function(){
+		$(".img12").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".jishu").fadeIn(500);
+			$(".img12").removeClass("imgactive");
+		},1000);
+	})
+	//质量链接
+	$(".item-box .item-zhiliang").click(function(){
+		$(".img13").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".zhiliang").fadeIn(500);
+			$(".img13").removeClass("imgactive");
+		},1000);
+	})
+	//实践链接
+	$(".item-box .item-shijian").click(function(){
+		$(".img14").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".shijian").fadeIn(500);
+			$(".img14").removeClass("imgactive");
+		},1000);
+	})
+	//业务发展链接
+	$(".item-box .item-yewu").click(function(){
+		$(".img15").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".yewu").fadeIn(500);
+			$(".img15").removeClass("imgactive");
+		},1000);
+	})
+	//项目链接
+	$(".item-box .item-xiangmu").click(function(){
+		$(".img16").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".xiangmu").fadeIn(500);
+			$(".img16").removeClass("imgactive");
+		},1000);
+	})
+	//信息链接
+	$(".item-box .item-xinxi").click(function(){
+		$(".img17").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".xinxi").fadeIn(500);
+			$(".img17").removeClass("imgactive");
+		},1000);
+	})
+	//发泡链接
+	$(".item-box .item-fapao").click(function(){
+		$(".img18").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".fapao").fadeIn(500);
+			$(".img18").removeClass("imgactive");
+		},1000);
+	})
+	//制造链接
+	$(".item-box .item-zhizao").click(function(){
+		$(".img19").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".zhizao").fadeIn(500);
+			$(".img19").removeClass("imgactive");
+		},1000);
+	})
+		//旗舰店链接
+	$(".item-box .item-qijiandian").click(function(){
+		$(".img20").addClass("imgactive");
+		setTimeout(function(){
+			for (var k=0;k<$(".btn").length;k++) {
+				$(".btn").eq(k).hide();
+			}
+			$(".qijiandian").fadeIn(500);
+			$(".img20").removeClass("imgactive");
+		},1000);
+	})
+	//跳转
+	$(".miantao").click(function(){
+		location.href="miantaoyewu.html";
+	})
+	$(".caigou").click(function(){
+		location.href="caigou.html";
+	})
+	$(".gonghui").click(function(){
+		location.href="gonghui.html";
+	})
+	$(".fute").click(function(){
+		location.href="futeshiye.html";
+	})
+	$(".renli").click(function(){
+		location.href="renliziyuan.html";
+	})
+	$(".huanan").click(function(){
+		location.href="huananshiye.html";
+	})
+	$(".jinshu").click(function(){
+		location.href="jinshudanyuan.html";
+	})
+	$(".woerwo").click(function(){
+		location.href="woerwo.html";
+	})
+	$(".xinan").click(function(){
+		location.href="xinanshiye.html";
+	})
+	$(".caiwu").click(function(){
+		location.href="caiwu.html";
+	})
+	$(".jishu").click(function(){
+		location.href="jishuzhongxin.html";
+	})
+	$(".zhiliang").click(function(){
+		location.href="zhiliang.html";
+	})
+	$(".shijian").click(function(){
+		location.href="shijianzhongxin.html";
+	})
+	$(".yewu").click(function(){
+		location.href="yewufazhan.html";
+	})
+	$(".xiangmu").click(function(){
+		location.href="xiangmu.html";
+	})
+	$(".xinxi").click(function(){
+		location.href="xinxijishu.html";
+	})
+	$(".zhiwei").click(function(){
+		location.href="guihua.html";
+	})
+	$(".fapao").click(function(){
+		location.href="fapaoyewu.html";
+	})
+	$(".zhizao").click(function(){
+		location.href="zhizaozhongxin.html";
+	})
+	$(".qijiandian").click(function(){
+		location.href="qijiandian.html";
+	})
+})
+</script>
+		<script src="js/config.js"></script>
+	</body>
+</html>

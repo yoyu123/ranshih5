@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html data-use-rem="750">
+<head>
+    <title>旗舰店</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta id="jdouview" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection"content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+	<link rel="stylesheet" type="text/css" href="miaotao/component.css"/>
+    <link rel="stylesheet" type="text/css" href="miaotao/normalize.css"/>
+	<link rel="stylesheet" type="text/css" href="css/qijiandian.css?v=201813"/>
+    <style>
+    .bg_section { width:1026px; height: 1026px; background-size: cover; position: absolute; }
+    .bg_section .bg { position: absolute; width: 1026px; height: 1026px; }
+   
+    </style>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    </head>
+    <body>
+    	<script>
+	!function(win){var doc=win.document,html=doc.documentElement,option=html.getAttribute("data-use-rem");if(null!==option){var baseWidth="NaN"==parseInt(option).toString()?750:parseInt(option),grids=baseWidth/100,clientWidth=html.clientWidth||320;html.style.fontSize=clientWidth/grids+"px";var testDom=document.createElement("div"),testDomWidth=0,adjustRatio=0;testDom.style.cssText="height:0;width:1rem;",doc.body.appendChild(testDom);var calcTestDom=function(){if(testDomWidth=testDom.offsetWidth,testDomWidth!==Math.round(clientWidth/grids)){adjustRatio=clientWidth/grids/testDomWidth;var reCalcRem=clientWidth*adjustRatio/grids;html.style.fontSize=reCalcRem+"px"}else doc.body.removeChild(testDom)};setTimeout(calcTestDom,20);var reCalc=function(){var newCW=html.clientWidth;newCW!==clientWidth&&(clientWidth=newCW,html.style.fontSize=newCW*(adjustRatio?adjustRatio:1)/grids+"px")};if(reCalc(),doc.addEventListener){var resizeEvt="orientationchange"in win?"orientationchange":"resize";win.addEventListener(resizeEvt,reCalc,!1),doc.addEventListener("DOMContentLoaded",reCalc,!1)}}}(window);
+</script>
+	
+
+<div id="home" class="wrap">
+		<!--控制横屏-->
+		<script type="text/javascript">
+			var detectOrient = function() {
+			var width = document.documentElement.clientWidth,
+			height = document.documentElement.clientHeight,
+			$wrapper = document.getElementById("home"),
+			style = "";
+			 
+			if( width >= height ){ // 横屏
+			style += "width:" + width + "px;"; // 注意旋转后的宽高切换
+			style += "height:" + height + "px;";
+			style += "-webkit-transform: rotate(0); transform: rotate(0);";
+			style += "-webkit-transform-origin: 0 0;";
+			style += "transform-origin: 0 0;";
+			}
+			else{ // 竖屏
+			style += "width:" + height + "px;";
+			style += "height:" + width + "px;";
+			style += "-webkit-transform: rotate(90deg); transform: rotate(90deg);";
+			// 注意旋转中点的处理
+			style += "-webkit-transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+			style += "transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+			}
+			$wrapper.style.cssText = style;
+			}
+			window.onresize = detectOrient;
+			detectOrient();
+		</script>
+		<!--竖屏提示-->
+			<div id="shutips">
+				<img src="img/hptips.png"/>
+			</div>
+		<!--loading-->
+	  <div class="load-box">
+	  	<img src="img/load_logo.gif" class="load-logo"/>
+	  	<div class="progress-box">
+	  		<img src="img/load_loading.png" class="load-tip"/>
+	  		<p class="progress"><span class="pao"></span>
+	  			<img src="img/load_loading1.png"/>
+	  		</p>
+	  		<p class="process_text">正在加载请稍后</p>
+	  	</div>
+	  	<img src="img/login_btn.png" class="load-login"/>
+	  </div>
+		<!--返回-->
+		  	<img src="img/back.png" class="back1"/>
+		<!-- 陀螺仪开启按钮 -->
+<div id="controlBtn" class="controlBtn controlIconae" style="opacity: 0;"></div> 
+<div id="panobox">
+<div id="pano">
+    <!-- 正方体的六个面 -->
+    <div id="bg_section_0" class="bg_section bg_section_4 scale_test">
+        <img class="bg" src="images/right.jpg" alt="">
+        <div class="zhouyuejishu1" ></div> 
+        <div class="zhuoyuezuzhi btnaa namea"></div> 
+        <div class="lantianjijin btnaa namea"></div> 
+        <div class="wenhuashengji btnaa namea"></div> 
+    </div>
+    <div id="bg_section_1" class="bg_section bg_section_5 scale_test">
+        <img class="bg" src="images/left.jpg" alt="">
+        <div class="womendekehu btnaa namea"></div> 
+        <div class="zuoyi btnaa namea"></div> 
+        <div class="zhuoyueshangwu btnaa namea"></div> 
+        <div class="zhizaonengli btnaa namea"></div> 
+    </div>
+    <div id="bg_section_2" class="bg_section bg_section_2 scale_test">
+        <img class="bg" src="images/top.jpg" alt="">
+    </div>
+    <div id="bg_section_3" class="bg_section bg_section_3 scale_test">
+        <img class="bg" src="images/bottom.jpg" alt="">
+    </div>
+    <div id="bg_section_4" class="bg_section bg_section_1 scale_test">
+        <img class="bg" src="images/front.jpg" alt="">
+        <div class="wenhuadeliliang btnaa namea"></div> 
+        <div class="zhuoyueyunying btnaa namea"></div>
+        <div class="zhouyuejishu namea"></div>
+        <div class="gongsirongyu btnaa namea"></div>
+    </div>
+    <div id="bg_section_5" class="bg_section bg_section_0 scale_test">
+        <img class="bg" src="images/back.jpg" alt="">
+        <div class="laoyuangong btnaa namea"></div>
+        <div class="yuangongvalue btnaa namea"></div>
+        <div class="aixiaoyu namea"></div>
+        <div class="gongchangbuju btnaa namea"></div>
+        <div class="dashiji btnaa namea"></div>
+        <div class="zhufushipin btnaa namea"></div>
+        
+    </div>
+</div>
+</div>
+<!--欢迎语-->
+<audio src="qijiandian/aixiaoyu.mp3" preload="auto" id="musich"></audio>
+<img src="img/musicbtn.png" class="musicbtn"/>
+<!--排名-->
+<img src="qijiandian/rank.png" class="rankbtn"/>
+<!--留言-->
+<img src="qijiandian/message.png" class="messagebtn"/>
+<!--艾小渝-->
+<img src="qijiandian/aixiaoyu.png" class="xiaoyutips"/>
+<!--卓越技术-->
+   <div class="zhouyuejishualert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/zhuoyuejishu/content.png" class="img"/>
+			</div>
+		</div>	
+    </div>
+    <!--文化的力量-->
+   <div class="wenhuadellalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<a href="https://weidian.com/item.html?itemID=2634457488"></a>
+		</div>	
+    </div>
+<!--文化升级-->
+   <div class="wenhuasjalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/wenhuasj/content.jpg" class="img"/>
+			</div>
+		</div>	
+    </div>
+    <!--大图-->
+    <div class="wenhuasjalert1">
+    	<div class="memberbox">
+			<img src="img/close1.png" class="close"/>
+			<img src="qijiandian/wenhuasj/content.jpg" />
+		</div>	
+    </div>
+<!--点赞排名-->
+ <div class="paimingalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<ul class="rank">
+					
+				</ul>
+			</div>
+		</div>	
+    </div>
+    <!--蓝天计划-->
+ <div class="lantianjihuaalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/lantianjihua/content.png"/>
+			</div>
+		</div>	
+    </div>
+<!--蓝天项目回顾-->
+ <div class="lantianbackalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/lantianworkhuigu/content.png"/>
+			</div>
+		</div>	
+    </div>
+<!--员工的价值-->
+ <div class="ygvaluealert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/yuangongvalue/content.png"/>
+			</div>
+			<p>笃行：因为有初心，所以我们愿意<br />砥砺进取，精益求精，不断突破</p>
+		</div>	
+    </div>
+<!--蓝天基金-->
+ <div class="lantianjjalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/lantianjijin/content.png"/>
+			</div>
+		</div>	
+    </div>
+<!--卓越组织-->
+ <div class="zuzhialert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/zhouyuezhuzi/content.png"/>
+			</div>
+		</div>	
+    </div>
+<!--卓越运营-->
+ <div class="yunyingalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/zhouyueyunyin/content.png"/>
+			</div>
+		</div>	
+    </div>
+<!--卓越商务-->
+ <div class="goodsalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/zhouyueshangwu/content.png"/>
+			</div>
+		</div>	
+    </div>
+<!--我们的客户-->
+ <div class="ourkehualert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/ourskehu/content.jpg"/>
+			</div>
+		</div>	
+    </div>
+<!--公司荣誉-->
+ <div class="rongyualert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<div class="left">
+					<img src="qijiandian/rongyu/btna1.png" class="active img1"/>
+					<img src="qijiandian/rongyu/btnb.png" class="img2"/>
+				</div>
+				<div class="right">
+					<img src="qijiandian/rongyu/contentkehu.png" class="active"/>
+					<img src="qijiandian/rongyu/contentzf.png"/>
+				</div>
+				
+			</div>
+		</div>	
+    </div>
+<!--工厂布局-->
+<div class="quanguoalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+			</div>
+		</div>	
+    </div>
+   
+<!--大事记-->
+ <div class="dashijilert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/dashijian/content.png"/>
+			</div>
+		</div>	
+    </div>
+
+<!--座椅展示-->
+ <div class="chairalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/zuoyizhanshi/content.png"/>
+			</div>
+		</div>	
+    </div>
+
+<!--技术中心历程-->
+   <div class="jishuhistoryalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<p class="title">我们携手   陪伴TC共同成长</p>
+			<div class="contentbox">
+				
+				<ul>
+					<li class="active">
+						<div class="videobox">
+							<img src="qijiandian/tcroadmap/x1.jpg"/>
+						</div>
+						<p>重庆延锋安道拓技术中心发展历程</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<img src="qijiandian/tcroadmap/x2.jpg"/>
+						</div>
+						<p>重庆延锋安道拓技术中心发展历程</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<img src="qijiandian/tcroadmap/x3.jpg"/>
+						</div>
+						<p>重庆延锋安道拓技术中心发展历程</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<img src="qijiandian/tcroadmap/x4.jpg"/>
+						</div>
+						<p>重庆延锋安道拓技术中心发展历程</p>
+					</li>
+					
+				</ul>
+				<img src="qijiandian/wishvideo/pre.png" class="pre"/>
+				<img src="qijiandian/wishvideo/next.png" class="next"/>
+			</div>
+		</div>	
+    </div>
+    <!--大图-->
+    <div class="jishuhistoryalert1">
+    	<div class="memberbox">
+			<img src="img/close1.png" class="close"/>
+			<ul>
+				<li class="active"><img src="qijiandian/tcroadmap/1.jpg"/></li>
+				<li><img src="qijiandian/tcroadmap/2.jpg"/></li>
+				<li><img src="qijiandian/tcroadmap/3.jpg"/></li>
+				<li><img src="qijiandian/tcroadmap/4.jpg"/></li>
+			</ul>
+		</div>	
+    </div>
+<!--祝福视频-->
+ <div class="wishalert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<ul>
+					<li class="active">
+						<div class="videobox">
+							<video id="video1" webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="100%" poster="qijiandian/wishvideo/img1.png" preload="auto" style='object-fit: fill;'  controls="controls" src="http://1258017916.vod2.myqcloud.com/eb3d2f72vodtranscq1258017916/d0d5c2b95285890782742886263/v.f40.mp4" ></video>
+						</div>
+						<p>Juiseng TAY——巴斯夫特性材料事业部全球副总裁</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<video id="video2"   webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="100%" preload="auto" style='object-fit: fill;'  poster="qijiandian/wishvideo/img1.png" controls="controls" src="http://1258017916.vod2.myqcloud.com/145341cavodcq1258017916/d0d5ba7a5285890782742886084/aroFFAPFSqIA.mp4" ></video>
+						</div>
+						<p>博奥-黄敏</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<video id="video3"   webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="100%" preload="auto" style='object-fit: fill;'  poster="qijiandian/wishvideo/img3.png" controls="controls" src="http://1258017916.vod2.myqcloud.com/145341cavodcq1258017916/d0d5ba7d5285890782742886087/Tdgv4Akg7hgA.mp4" ></video>
+						</div>
+						<p>大家拓展</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<video id="video4"   webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="100%" preload="auto" style='object-fit: fill;'  poster="qijiandian/wishvideo/img4.png" controls="controls" src="http://1258017916.vod2.myqcloud.com/145341cavodcq1258017916/014297505285890782739917001/2nbCnDEzrSEA.mp4" ></video>
+						</div>
+						<p>华远祝福视频</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<video id="video5"   webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="100%" preload="auto" style='object-fit: fill;'  poster="qijiandian/wishvideo/img5.png" controls="controls" src="http://1258017916.vod2.myqcloud.com/eb3d2f72vodtranscq1258017916/01429fd55285890782739917204/v.f40.mp4" ></video>
+						</div>
+						<p>许有全—蓝星东大销售公司经理</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<video id="video6"   webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="100%" preload="auto" style='object-fit: fill;'  poster="qijiandian/wishvideo/img6.png" controls="controls" src="http://1258017916.vod2.myqcloud.com/145341cavodcq1258017916/d0d5ba9c5285890782742886095/pH95irqWKz8A.mp4" ></video>
+						</div>
+						<p>雅虎祝福视频</p>
+					</li>
+					<li>
+						<div class="videobox">
+							<video id="video7"   webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="100%" preload="auto"  style='object-fit: fill;'  controls="controls" poster="qijiandian/wishvideo/img7.png" src="http://1258017916.vod2.myqcloud.com/145341cavodcq1258017916/d0c174305285890782742872142/m3wUGA2wupkA.mp4" ></video>
+						</div>
+						<p>退休员工祝福视频</p>
+					</li>
+				</ul>
+				<img src="qijiandian/wishvideo/pre.png" class="pre"/>
+				<img src="qijiandian/wishvideo/next.png" class="next"/>
+			</div>
+		</div>	
+    </div>
+<!--制造能力-->
+ <div class="makepoweralert">
+    	<div class="memberbox">
+			<img src="qijiandian/close.png" class="close"/>
+			<div class="contentbox">
+				<img src="qijiandian/makepower/content.png"/>
+			</div>
+		</div>	
+    </div>
+
+	
+	
+</div>
+<script src="js/zepto.min.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/CSS3DRenderer.min.js"></script>
+<script src="js/DeviceOrientationControls.js"></script>
+<script>
+	
+var camera, scene, renderer;
+var geometry, material, mesh;
+var target = new THREE.Vector3();
+
+var lon = 90, lat = 0;
+var phi = 0, theta = 0;
+
+var touchX, touchY;
+
+init();
+animate();
+
+function init() {
+//   添加相机
+    camera = new THREE.PerspectiveCamera( 
+        75, // 相机视角的夹角
+        // 相机画幅比
+        window.innerWidth / window.innerHeight,  
+        1, // 最近焦距
+        1000 // 最远焦距
+        ); 
+
+//   创建场景
+    scene = new THREE.Scene();
+
+    /**
+     *正方体的6个面的资源及相关（坐标、旋转等）设置
+     */
+    var flipAngle = Math.PI, // 180度
+        rightAngle = flipAngle / 2, 
+        tileWidth = 512; 
+    var sides = [{
+        url: "images/right.jpg", //right
+        position: [-tileWidth, 0, 0],
+        rotation: [0, rightAngle, 0]
+    }, {
+        url: "images/left.jpg", //left    
+        position: [tileWidth, 0, 0],
+        rotation: [0, -rightAngle, 0]
+    }, {
+        url: "images/top.jpg", //top
+        position: [0, tileWidth, 0],
+        rotation: [rightAngle, 0, Math.PI]
+    }, {
+        url: "images/bottom.jpg", //bottom
+        position: [0, -tileWidth, 0],
+        rotation: [-rightAngle, 0, Math.PI]
+    }, {
+        url: "images/front.jpg", //front
+        position: [0, 0, tileWidth],
+        rotation: [0, Math.PI, 0]
+    }, {
+        url: "images/back.jpg", //back
+        position: [0, 0, -tileWidth],
+        rotation: [0, 0, 0]
+    }];
+
+    for ( var i = 0; i < sides.length; i ++ ) {
+        var side = sides[ i ];
+        var element = document.getElementById("bg_section_"+i);
+        element.width = 1026;
+        element.height = 1026; // 2 pixels extra to close the gap.
+        // 添加一个渲染器
+        var object = new THREE.CSS3DObject( element );
+        object.position.fromArray( side.position );
+        object.rotation.fromArray( side.rotation );
+        scene.add( object );
+
+    }
+
+    renderer = new THREE.CSS3DRenderer(); // 定义渲染器
+    renderer.setSize( window.innerHeight,window.innerWidth); // 定义尺寸
+   document.getElementById("panobox").appendChild( renderer.domElement ); // 将场景到加入页面中
+
+    initDevices();
+    initMouseControl();
+
+}
+
+// 初始化控制器
+function initMouseControl() {
+    // mouseControl = new THREE.OrbitControls(camera);
+    document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+    document.addEventListener( 'wheel', onDocumentMouseWheel, false );
+    document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+    document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+    window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+var controlsBtn= document.getElementById("controlBtn"); // 控制陀螺仪开关的按钮
+var isDeviceing = false; // 陀螺仪状态
+controlsBtn.addEventListener("touchend", controlDevice, true);
+isDeviceing == true ? $("#controlBtn").addClass("controlIconae") : $("#controlBtn").addClass("controlIcon");
+// 初始化陀螺仪
+function initDevices() {
+    deviceControl = new THREE.DeviceOrientationControls(camera);
+}
+/* 控制陀螺仪 */
+function controlDevice(event) {
+    if (isDeviceing == true) {
+        isDeviceing = false;
+        //关闭陀螺仪
+        $("#controlBtn").removeClass("controlIcon").addClass("controlIconae");
+    } else {
+        isDeviceing = true;
+        //开启陀螺仪
+        $("#controlBtn").removeClass("controlIconae").addClass("controlIcon");
+    }
+}
+
+/**
+ * 窗体大小改变
+ */
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerHeight, window.innerWidth);
+}
+
+/*
+相机焦点跟着鼠标或手指的操作移动
+ */
+function onDocumentMouseDown( event ) {
+//  event.preventDefault();
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+
+}
+
+function onDocumentMouseMove( event ) {
+    var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+    var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+     lat-= movementX * 0.1;
+     lon+= movementY * 0.1;
+}
+
+function onDocumentMouseUp( event ) {
+    document.removeEventListener( 'mousemove', onDocumentMouseMove );
+    document.removeEventListener( 'mouseup', onDocumentMouseUp );
+}
+
+/**
+ * 鼠标滚轮改变相机焦距
+ */
+function onDocumentMouseWheel( event ) {
+    camera.fov += event.deltaY * 0.05;
+    camera.updateProjectionMatrix();
+}
+
+function onDocumentTouchStart( event ) {
+//  event.preventDefault();
+    var touch = event.touches[ 0 ];
+    touchX = touch.screenX;
+    touchY = touch.screenY;
+
+}
+
+function onDocumentTouchMove( event ) {
+//  event.preventDefault();
+    var touch = event.touches[ 0 ];
+     lat-= ( touch.screenX - touchX ) * 0.1;
+     lon+= ( touch.screenY - touchY ) * 0.1;
+    touchX = touch.screenX;
+    touchY = touch.screenY;
+
+}
+
+/**
+ * 实时渲染函数
+ */
+function animate() {
+    requestAnimationFrame(animate);
+//     lon = Math.max(-180, Math.min(180, lon));//限制固定角度内旋转
+//     lon += 0.1;//自动旋转
+    lat = Math.max(-85, Math.min(85, lat)); //限制固定角度内旋转
+    phi = THREE.Math.degToRad(85 - lat);
+    theta = THREE.Math.degToRad(lon+180);
+    target.x = Math.sin(phi) * Math.cos(theta);
+    target.y = Math.cos(phi);
+    target.z = Math.sin(phi) * Math.sin(theta);
+    camera.lookAt( target );
+    camera.updateProjectionMatrix();
+    isDeviceing == false ? initMouseControl() : deviceControl.update();
+    renderer.render(scene, camera);
+}
+
+document.getElementById("panobox").addEventListener("touchmove",function(event){
+	event.preventDefault();
+},true);
+</script>
+  
+   <!--ios自动播放-->
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+
+  <script type="text/javascript">
+    	$(function(){
+    		
+    		initpage(0,'旗舰店');
+	        getlike(0,'旗舰店');
+	
+	 //loading page
+        var timer = null,
+            angle = 1,
+            speed = 0;
+        (function increase() {
+          timer = setTimeout(increase, 10);
+          var percent = speed.toFixed(0);
+          $(".pao").width(percent+"%");
+//        $('#process_num').text(percent + '%');
+          if(percent >= 0 && percent < 50) {
+            $('.process_text').text('正在加载请稍后');
+          } else if(percent >= 50 && percent < 70) {
+            $('.process_text').text('象舞之年 创见无限');
+          } else if(percent >= 70 && percent < 87) {
+            $('.process_text').text('One CQYFAS，One Goal');
+          } else if(percent >= 87 && percent < 100) {
+            $('.process_text').text('我们大于我');
+          }
+          if(speed > angle * 100) clearTimeout(timer, init1());
+          speed += 0.25;
+        }());
+        var audio1=document.getElementById("musich");
+        var arr=['qijiandian/aixiaoyu.mp3','qijiandian/aixiaoyubg.mp3'];
+        var end=0;
+        function init1() {
+         $(".load-box").fadeOut();
+     audio1.src=arr[end];
+    				audio1.play();
+    				 $(".musicbtn").addClass("activer");
+    				audio1.onended=function(){
+    			end=1;
+    			this.src=arr[end];
+    			audio1.play();
+    			 $(".musicbtn").addClass("activer");
+    		}
+    //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
+    
+    document.addEventListener("WeixinJSBridgeReady", function () { 
+        audio1.src=arr[end];
+    				audio1.play();
+    				 $(".musicbtn").addClass("activer");
+    				audio1.onended=function(){
+    			end=1;
+    			this.src=arr[end];
+    			audio1.play();
+    			 $(".musicbtn").addClass("activer");
+    		}
+       
+    }, false); 
+         setTimeout(function(){
+         	$(".xiaoyutips").hide();
+         },5000);
+        }
+        //音乐控制
+        	$(".musicbtn").click(function(){
+    			if(audio1.paused){
+    				audio1.src=arr[end];
+    				audio1.play();
+    				$(".musicbtn").addClass("activer");
+    				audio1.onended=function(){
+    			end=1;
+    			this.src=arr[end];
+    			audio1.play();
+    			$(".musicbtn").addClass("activer");
+    		}
+    			}else{
+    				audio1.pause();
+    				$(".musicbtn").removeClass("activer");
+    			}
+    		});
+	//放回上一页
+	$(".back1").click(function(){
+		location.href="index.html";
+	})
+	        //老员工
+	         $(".laoyuangong").click(function(){
+	        	location.href="laoyuangong.html";
+	        })
+	         //排名
+	         $(".rankbtn").click(function(){
+	         	$(".paimingalert").show();
+	         })
+	         //留言
+	         $(".messagebtn").click(function(){
+	         	location.href="message.html";
+	         })
+	        //艾小渝
+	         $(".aixiaoyu").click(function(){
+	        	$(".xiaoyutips").show();
+	        })
+	        $(".xiaoyutips").click(function(){
+	        	$(this).hide();
+	        })
+	         //卓越技术
+	         $(".zhouyuejishu").click(function(){
+	         	$(".zhouyuejishualert").show();
+	         })
+	          $(".zhouyuejishu1").click(function(){
+	         	$(".zhouyuejishualert").show();
+	         })
+	         $(".zhouyuejishualert .memberbox .close").click(function(){
+            	$(".zhouyuejishualert").hide();
+            })
+	          //文化的力量
+	         $(".wenhuadeliliang").click(function(){
+	         	$(".wenhuadellalert").show();
+	         })
+	         
+	         $(".wenhuadellalert .memberbox .close").click(function(){
+            	$(".wenhuadellalert").hide();
+            })
+	         //文化升级切换大图
+	          $(".wenhuashengji").click(function(){
+	         	$(".wenhuasjalert").show();
+	         })
+   $(".wenhuasjalert .memberbox .img").click(function(){
+   	 $(".wenhuasjalert1").show();
+   })
+    		$(".wenhuasjalert .memberbox .close").click(function(){
+            	$(".wenhuasjalert").hide();
+            })
+    		//大图
+    		$(".wenhuasjalert1 .memberbox .close").click(function(){
+            	$(".wenhuasjalert1").hide();
+            })
+	
+	
+	                  //点赞排名
+	                
+//	                  获取信息
+              var rankli="";
+              var rankdata="";
+           $.ajax({
+				url : wxurl + "wechat/index/getliketop",
+				type : "post",
+				dataType : "json",
+				data : {},
+				success : function(res) {
+					console.log(res);
+				   var rankdata=res.list;
+				   for (var i=0;i<rankdata.length;i++) {
+            	rankli+='<li><div class="left">'+rankdata[i].index+'</div><div class="zhong">'+rankdata[i].name+'</div><div class="right">'+rankdata[i].count+'</div></li>'
+            }
+				    //追加排名信息
+           $(".rank").append(rankli);
+				}
+			})
+
+	             $(".paimingalert .memberbox .close").click(function(){
+            	   $(".paimingalert").hide();
+            	
+                 })
+	                  //蓝天计划
+	                 
+	             $(".lantianjihuaalert .memberbox .close").click(function(){
+            	   $(".lantianjihuaalert").hide();
+            	
+                 })
+	                 //蓝天项目回顾
+	             $(".lantianbackalert .memberbox .close").click(function(){
+            	   $(".lantianbackalert").hide();
+            	
+                 })
+	               //员工的价值
+	                $(".yuangongvalue").click(function(){
+            	   $(".ygvaluealert").show();
+                 })
+    		var ygtimer=setInterval(function(){
+    			$(".ygvaluealert .memberbox  p").html('笃行：因为有初心，所以我们愿意<br />砥砺进取，精益求精，不断突破');
+    			setTimeout(function(){
+    			  $(".ygvaluealert .memberbox  p").html('初心：每一个加入这里的人，都是有信念、<br />有态度、有追求的人。我们志同道合。');	
+    			},1000);
+    		},2000);
+	             $(".ygvaluealert .memberbox .close").click(function(){
+            	   $(".ygvaluealert").hide();
+            	
+                 })
+	                  //蓝天基金
+	                   $(".lantianjijin").click(function(){
+            	   $(".lantianjjalert").show();
+                 })
+	             $(".lantianjjalert .memberbox .close").click(function(){
+            	   $(".lantianjjalert").hide();
+            	
+                 })
+	                //卓越组织
+	                 $(".zhuoyuezuzhi").click(function(){
+            	   $(".zuzhialert").show();
+                 })
+	             $(".zuzhialert .memberbox .close").click(function(){
+            	   $(".zuzhialert").hide();
+            	
+                 })
+	                //卓越运营
+	                 $(".zhuoyueyunying").click(function(){
+            	   $(".yunyingalert").show();
+                 })
+	             $(".yunyingalert .memberbox .close").click(function(){
+            	   $(".yunyingalert").hide();
+            	
+                 })
+	              //卓越商务
+	               $(".zhuoyueshangwu").click(function(){
+            	   $(".goodsalert").show();
+                 })
+	             $(".goodsalert .memberbox .close").click(function(){
+            	   $(".goodsalert").hide();
+            	
+                 })
+	             //我们的客户
+	             $(".womendekehu").click(function(){
+            	   $(".ourkehualert").show();
+                 })
+	             $(".ourkehualert .memberbox .close").click(function(){
+            	   $(".ourkehualert").hide();
+            	
+                 })
+	             //公司荣誉
+	              $(".gongsirongyu").click(function(){
+            	   $(".rongyualert").show();
+                 })
+	             var ryindex=0;
+              $(".rongyualert .memberbox .left img").click(function(){
+              	     ryindex=$(this).index();
+              	     if(ryindex==0){
+              	     $(this).attr("src","qijiandian/rongyu/btna1.png").siblings('.img2').attr("src","qijiandian/rongyu/btnb.png").siblings('.img3').attr("src","qijiandian/rongyu/btnc.png");
+              	    
+$(".rongyualert .memberbox .contentbox .right img").eq(ryindex).show().siblings().hide();
+              	     }else if(ryindex==1){
+              	      $(this).attr("src","qijiandian/rongyu/btnb1.png").siblings('.img1').attr("src","qijiandian/rongyu/btna.png").siblings('.img3').attr("src","qijiandian/rongyu/btnc.png");
+              	    
+              	     $(".rongyualert .memberbox .contentbox .right img").eq(ryindex).show().siblings().hide();
+              	     }else if(ryindex==2){
+              	      $(this).attr("src","qijiandian/rongyu/btnc1.png").siblings('.img1').attr("src","qijiandian/rongyu/btna.png").siblings('.img2').attr("src","qijiandian/rongyu/btnb.png");
+              	    
+              	    $(".jishuhistoryalert").show();
+              	     }
+              	     
+        	      
+        	
+            })
+    		 $(".rongyualert .memberbox .close").click(function(){
+            	$(".rongyualert").hide();
+            	
+            })
+	          //工厂布局
+	           $(".gongchangbuju").click(function(){
+            	$(".quanguoalert").show();
+            	
+            })
+    		 $(".quanguoalert .memberbox .close").click(function(){
+            	$(".quanguoalert").hide();
+            	
+            })
+	        //大事记
+	         $(".dashiji").click(function(){
+            	$(".dashijilert").show();
+            })
+    		 $(".dashijilert .memberbox .close").click(function(){
+            	$(".dashijilert").hide();
+            })
+	       
+    		//座椅展示
+    		  $(".zuoyi").click(function(){
+            	$(".chairalert").show();
+            })
+    		 $(".chairalert .memberbox .close").click(function(){
+            	$(".chairalert").hide();
+            })
+    		//技术中心历程
+    		var tctimer=setInterval(function(){
+    			$(".jishuhistoryalert .memberbox  .title").html('我们携手   陪伴TC共同成长');
+    			setTimeout(function(){
+    			  $(".jishuhistoryalert .memberbox  .title").html('象舞之年   恍然回顾以硕果累累');	
+    			},1000);
+    			setTimeout(function(){
+    			  $(".jishuhistoryalert .memberbox  .title").html('我们相信   我们可以创造更好的未来');	
+    			},2000);
+    			setTimeout(function(){
+    			  $(".jishuhistoryalert .memberbox  .title").html('Trust create Future!');	
+    			},3000);
+    		},4000);
+    		
+ //技术中心历程切换
+    		var jishuindex=0;
+    		 $(".jishuhistoryalert .pre").on('touchstart',function(){
+   	$(".jishuhistoryalert .memberbox li").eq(jishuindex).fadeOut();
+   	  if(jishuindex==0){
+   	  	jishuindex=$(".jishuhistoryalert .memberbox li").length-1;
+   	  }else{
+   	  	jishuindex--;
+   	  }
+   	  $(".jishuhistoryalert .memberbox li").eq(jishuindex).fadeIn();
+   })
+   $(".jishuhistoryalert  .next").on('touchstart',function(){
+   	$(".jishuhistoryalert .memberbox li").eq(jishuindex).fadeOut();
+   	  if(jishuindex==($(".jishuhistoryalert .memberbox li").length-1)){
+   	  	jishuindex=0;
+   	  }else{
+   	  	jishuindex++;
+   	  }
+   	  $(".jishuhistoryalert .memberbox li").eq(jishuindex).fadeIn();
+     })
+   //切换大图
+   $(".jishuhistoryalert .memberbox li img").click(function(){
+   	 $(".jishuhistoryalert1 .memberbox li").eq(jishuindex).fadeIn().siblings().fadeOut();
+   	 $(".jishuhistoryalert1").show();
+   })
+    		$(".jishuhistoryalert .memberbox .close").click(function(){
+            	$(".jishuhistoryalert").hide();
+            })
+    		//大图
+    		$(".jishuhistoryalert1 .memberbox .close").click(function(){
+            	$(".jishuhistoryalert1").hide();
+            })
+    		//祝福视频切换
+    		var wishindex=0;
+    		 $(".wishalert .pre").on('touchstart',function(){
+   	$(".wishalert .memberbox li").eq(wishindex).fadeOut();
+   	  if(wishindex==0){
+   	  	wishindex=$(".wishalert .memberbox li").length-1;
+   	  }else{
+   	  	wishindex--;
+   	  }
+   	  $(".wishalert .memberbox li").eq(wishindex).fadeIn();
+   	  var wishindex1=wishindex+1;
+   	  for (var k=1;k<8;k++) {
+   	  	document.getElementById("video"+k).pause();
+   	  	document.getElementById("video"+wishindex1).play();
+   	  }
+   })
+   $(".wishalert  .next").on('touchstart',function(){
+   	$(".wishalert .memberbox li").eq(wishindex).fadeOut();
+   	  if(wishindex==($(".wishalert .memberbox li").length-1)){
+   	  	wishindex=0;
+   	  }else{
+   	  	wishindex++;
+   	  }
+   	  $(".wishalert .memberbox li").eq(wishindex).fadeIn();
+   	  var wishindex1=wishindex+1;
+   	  for (var k=1;k<8;k++) {
+   	  	document.getElementById("video"+k).pause();
+   	  	document.getElementById("video"+wishindex1).play();
+     }})
+   //关闭祝福视频弹窗
+    $(".zhufushipin").click(function(){
+            	$(".wishalert").show();
+            })
+    $(".wishalert .memberbox .close").click(function(){
+            	$(".wishalert").hide();
+            	$(".wishalert .memberbox li").eq(wishindex).fadeIn();
+   	  for (var k=1;k<8;k++) {
+   	  	document.getElementById("video"+k).pause();
+     }
+            })
+//  		制造能力
+$(".zhizaonengli").click(function(){
+            	$(".makepoweralert").show();
+            })
+            $(".makepoweralert .memberbox .close").click(function(){
+            	$(".makepoweralert").hide();
+            })
+   
+    	})
+    </script>
+    </body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html data-use-rem="750">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="x5-orientation" content="landscape">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="HandheldFriendly" content="true">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta http-equiv="Cache" content="no-cache">
+		<title>艾小渝的店</title>
+		<!--引入css样式-->
+		<link rel="stylesheet" type="text/css" href="css/login.css?v=201813"/>
+		<!--引入jquery样式-->
+		
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/config.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	</head>
+	<body>
+		<script>
+	!function(win){var doc=win.document,html=doc.documentElement,option=html.getAttribute("data-use-rem");if(null!==option){var baseWidth="NaN"==parseInt(option).toString()?750:parseInt(option),grids=baseWidth/100,clientWidth=html.clientWidth||320;html.style.fontSize=clientWidth/grids+"px";var testDom=document.createElement("div"),testDomWidth=0,adjustRatio=0;testDom.style.cssText="height:0;width:1rem;",doc.body.appendChild(testDom);var calcTestDom=function(){if(testDomWidth=testDom.offsetWidth,testDomWidth!==Math.round(clientWidth/grids)){adjustRatio=clientWidth/grids/testDomWidth;var reCalcRem=clientWidth*adjustRatio/grids;html.style.fontSize=reCalcRem+"px"}else doc.body.removeChild(testDom)};setTimeout(calcTestDom,20);var reCalc=function(){var newCW=html.clientWidth;newCW!==clientWidth&&(clientWidth=newCW,html.style.fontSize=newCW*(adjustRatio?adjustRatio:1)/grids+"px")};if(reCalc(),doc.addEventListener){var resizeEvt="orientationchange"in win?"orientationchange":"resize";win.addEventListener(resizeEvt,reCalc,!1),doc.addEventListener("DOMContentLoaded",reCalc,!1)}}}(window);
+</script>
+	<div id="home" class="wrap">
+		<!--竖屏提示-->
+			<div id="shutips">
+				<img src="img/hptips.png"/>
+			</div>
+		<!--loading-->
+	  <div class="load-box">
+	  	<img src="img/load_logo.gif" class="load-logo"/>
+	  	<div class="progress-box">
+	  		<img src="img/load_loading.png" class="load-tip"/>
+	  		<p class="progress"><span class="pao"></span>
+	  			<img src="img/load_loading1.png"/>
+	  		</p>
+	  		<p class="process_text">正在加载请稍后</p>
+	  	</div>
+	  	<img src="img/login_btn.png" class="load-login"/>
+	  </div>
+	  <!--login-->
+	  <div class="login-box">
+	  	<!--标题-->
+	  	<span class="tips"></span>
+	  	<img src="img/login_wecome.png" class="login-title"/>
+	    <ul class="left">
+	    	<li class="active">员工</li>
+	    	<li>家属</li>
+	    	<li>合作伙伴</li>
+	    	<li>粉丝</li>
+	    </ul>
+	    <div class="right">
+	    	<!--员工-->
+	    	<ul class="active">
+	    		<li><input type="text" id="name1" value="" placeholder="填写姓名"/></li>
+	    		<li><input type="text" id="gonghao" value="" placeholder="填写工号"/></li>
+	    		<li><div class="bumen" id="bumen">选择部门</div><img src="img/selectbtn.png" class="selectbtn"/>
+	    		</li>
+	    		<li><img src="img/loginbtn.png" class="loginbtn btn1"/></li>
+	    	</ul>
+	    	<!--家属-->
+	    	<ul>
+	    		<li><input type="text" id="name2" value="" placeholder="填写姓名"/></li>
+	    		<li><input type="text" id="tel2" value="" placeholder="填写手机号"/></li>
+	    		<li><input type="text" id="ygname" value="" placeholder="填写员工姓名"/></li>
+	    		<li><img src="img/loginbtn.png" class="loginbtn btn2"/></li>
+	    	</ul>
+	    	<!--粉丝-->
+	    	<ul>
+	    		<li><input type="text" id="name3" value="" placeholder="填写姓名"/></li>
+	    		<li><input type="text" id="gongshi" value="" placeholder="所属公司"/></li>
+	    		<li><input type="text" id="tel3" value="" placeholder="手机号码"/></li>
+	    		<li>
+	    			<img src="img/loginbtn.png" class="loginbtn btn3"/>
+	    		</li>
+	    		
+	    	</ul>
+	    	<!--合作伙伴-->
+	    	<ul>
+	    		<li><input type="text" id="name4" value="" placeholder="填写姓名"/></li>
+	    		<li><input type="text" id="gongshi4" value="" placeholder="所属公司"/></li>
+	    		<li><input type="text" id="tel4" onclick="inputCilick" value="" placeholder="手机号码"/></li>
+	    		<li>
+	    			<img src="img/loginbtn.png" class="loginbtn btn4"/>
+	    		</li>
+	    		
+	    	</ul>
+	    </div>
+	    <!--部门选择弹窗-->
+	    <div class="bumenalert">
+	    	<div class="title">部门选择 <img src="img/close.png" class="close"/></div>
+	    	<ul class="selectbox">
+	    		<li class="active">财务部</li>
+	    		<li>采购部</li>
+	    		<li>创新规划部</li>
+	    		<li>发泡业务单元</li>
+	    		<li>福特事业部</li>
+	    		<li>工会</li>
+	    		<li>华南事业部</li>
+	    		<li>技术中心</li>
+	    		<li>金属件业务单元</li>
+	    		<li>面套业务单元</li>
+	    		<li>人力资源部</li>
+	    		<li>沃尔沃事业部</li>
+	    		<li>西南事业部</li>
+	    		<li>项目部</li>
+	    		<li>信息技术部</li>
+	    		<li>业务发展部</li>
+	    		<li>整椅产品最佳实践中心</li>
+	    		<li>总经办</li>
+	    		<li>执委办</li>
+	    		<li>制造管理中心</li>
+	    		<li>质量部</li>
+	    	</ul>
+	    </div>
+	    <!--底部图片-->
+	    <img src="img/loginbottom.png" class="loginb"/>
+	  </div>
+				
+	</div>
+<script type="text/javascript">
+
+function wxshare1() {
+	$.ajax({
+		url : wxurl + "wechat/login/wxshare",
+		type : "post",
+		dataType : "json",
+		data : {
+			url : window.location.href
+		},
+		success : function(res) {
+			if (res.type == 200) {
+				wx.config({
+					debug : false,
+					appId : "wxe3a4d452dc0cb22c",
+					timestamp : res.object.timestamp,
+					nonceStr : res.object.nonce_str,
+					signature : res.object.signature,
+					jsApiList : [ 'onMenuShareTimeline',
+							'onMenuShareAppMessage', 'onMenuShareQQ',
+							'onMenuShareWeibo', 'onMenuShareQZone',
+							'chooseImage', 'previewImage', 'uploadImage',
+							'downloadImage', 'getLocation' ]
+				});
+
+				wx.ready(function() {
+					fenxiangwxpy1("http://burningstone.magic-source.com/burningstone/wechat/login/login");
+				})
+			}
+		}
+	})
+}
+
+var fenxiangObj1 = {
+	title : "艾小渝的店",
+	desc : "象舞之年  创见无限",
+	link : "http://burningstone.magic-source.com/burningstone/wechat/login/login",
+	imgUrl : "http://burningstone.magic-source.com/burningstone/web/img/share_logo.jpg"
+}
+
+function fenxiangwxpy1(url) {
+	// 分享给朋友
+	wx.onMenuShareAppMessage({
+		title : fenxiangObj1.title, // 分享标题
+		desc : fenxiangObj1.desc, // 分享描述
+		link : url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+		imgUrl : fenxiangObj1.imgUrl, // 分享图标
+		success : function() {
+			// 用户点击了分享后执行的回调函数
+		}
+	})
+	// 分享给朋友圈
+	wx.onMenuShareTimeline({
+		title : fenxiangObj1.title, // 分享标题
+		link : url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+		imgUrl : fenxiangObj1.imgUrl, // 分享图标
+		success : function() {
+			// 用户点击了分享后执行的回调函数
+		}
+	})
+	// 分享给QQ
+	wx.onMenuShareQQ({
+		title : fenxiangObj1.title, // 分享标题
+		desc : fenxiangObj1.desc, // 分享描述
+		link : url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+		imgUrl : fenxiangObj1.imgUrl, // 分享图标
+		success : function() {
+			// 用户点击了分享后执行的回调函数
+		}
+	})
+	// 分享给QQ微博
+	wx.onMenuShareWeibo({
+		title : fenxiangObj1.title, // 分享标题
+		desc : fenxiangObj1.desc, // 分享描述
+		link : url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+		imgUrl : fenxiangObj1.imgUrl, // 分享图标
+		success : function() {
+			// 用户点击了分享后执行的回调函数
+		}
+	})
+	// 分享给QQ空间
+	wx.onMenuShareQZone({
+		title : fenxiangObj1.title, // 分享标题
+		desc : fenxiangObj1.desc, // 分享描述
+		link : url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+		imgUrl : fenxiangObj1.imgUrl, // 分享图标
+		success : function() {
+			// 用户点击了分享后执行的回调函数
+		}
+	})
+}
+
+$(function(){
+	
+	//wxshare1();
+	
+	  //loading page
+        var timer = null,
+            angle = 1,
+            speed = 0;
+        (function increase() {
+          timer = setTimeout(increase, 10);
+          var percent = speed.toFixed(0);
+          $(".pao").width(percent+"%");
+//        $('#process_num').text(percent + '%');
+          if(percent >= 0 && percent < 50) {
+            $('.process_text').text('正在加载请稍后');
+          } else if(percent >= 50 && percent < 70) {
+            $('.process_text').text('象舞之年 创见无限');
+          } else if(percent >= 70 && percent < 87) {
+            $('.process_text').text('One CQYFAS，One Goal');
+          } else if(percent >= 87 && percent < 100) {
+            $('.process_text').text('我们大于我');
+          }
+          if(speed > angle * 100) clearTimeout(timer, init());
+          speed += 0.25;
+        }());
+        
+        function init() {
+         $(".load-box").fadeOut();
+        }
+        //输入框位置
+        $(window).resize(function(){
+        	$(".login-box").scrollTop(document.body.scrollHeight/2);
+        })
+      
+        
+	//登录选择
+	$(".left li").click(function(){
+		var index=$(this).index();
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".right ul").eq(index).show().siblings().hide();
+	})
+	//打开选择部门
+	$(".bumen").click(function(){
+		$(".bumenalert").fadeIn();
+	})
+	$(".selectbtn").click(function(){
+		$(".bumenalert").fadeIn();
+	})
+	//选择部门
+	$(".selectbox li").click(function(){
+		var selectValue=$(this).html();
+		$(this).addClass('active').siblings().removeClass('active');
+		$(".bumen").html(selectValue);
+		$(".bumenalert").fadeOut();
+	})
+	//关闭选择部门
+	$(".bumenalert .close").click(function(){
+		$(".bumenalert").fadeOut();
+	})
+
+})
+//员工
+$(".btn1").click(function(){
+	
+	var type=0;
+	var name=$("#name1").val();
+	var phone=$("#gonghao").val();
+	var other=$("#bumen").html();
+	if(name==""||name==" "||phone==""||phone==" "||other=="选择部门"){
+		$(".tips").html("请填写完整信息");
+		$(".tips").show();
+		setTimeout(function(){
+			$(".tips").hide();
+		},1000);
+	}else{
+		bind(type,name,phone,other);
+	}
+})
+//家属
+$(".btn2").click(function(){
+	
+	var type=1;
+	var name=$("#name2").val();
+	var phone=$("#tel2").val();
+	var other=$("#ygname").val();
+	if(name==""||name==" "||phone==""||phone==" "||other==""||other==" "){
+		$(".tips").html("请填写完整信息");
+		$(".tips").show();
+		setTimeout(function(){
+			$(".tips").hide();
+		},1000);
+	}else{
+		bind(type,name,phone,other);
+	}
+})
+//粉丝
+$(".btn3").click(function(){
+	
+	var type=2;
+	var name=$("#name3").val();
+	var phone=$("#tel3").val();
+	var other=$("#gongshi").val();
+	if(name==""||name==" "||phone==""||phone==" "||other==""||other==" "){
+		$(".tips").html("请填写完整信息");
+		$(".tips").show();
+		setTimeout(function(){
+			$(".tips").hide();
+		},1000);
+	}else{
+		bind(type,name,phone,other);
+	}
+})
+//合作伙伴
+$(".btn4").click(function(){
+	
+	var type=2;
+	var name=$("#name4").val();
+	var phone=$("#tel4").val();
+	var other=$("#gongshi4").val();
+	if(name==""||name==" "||phone==""||phone==" "||other==""||other==" "){
+		$(".tips").html("请填写完整信息");
+		$(".tips").show();
+		setTimeout(function(){
+			$(".tips").hide();
+		},1000);
+	}else{
+		bind(type,name,phone,other);
+	}
+})
+
+function bind(type,name,phone,other){
+	$.ajax({
+		url : wxurl + "wechat/index/bind",
+		type : "post",
+		dataType : "json",
+		data : {
+			type : type,
+			name : name,
+			phone : phone,
+			other : other,
+		},
+		success : function(res) {
+			if (res.type == 200) {
+				window.location.href = wxurl + "web/index.html";
+			} else if (res.type == 202) {
+				window.location.href = redirect_url;
+			} else if (res.type == 203) {
+				window.location.href = wxurl + "web/login.html";
+			} else {
+				alert(res.msg);
+				window.location.href = wxurl + "web/index.html";
+			}
+		}
+	})
+}
+</script>
+	</body>
+</html>

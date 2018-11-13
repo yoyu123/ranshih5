@@ -1,0 +1,743 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	outline: none;
+	-webkit-user-select：none;
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	font-family: "微软雅黑";
+}
+html,body{
+	font-size: 100px;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+a{
+	text-decoration: none;
+}
+img{
+    border: none;
+    vertical-align: middle;
+}
+li{
+	list-style: none;
+}
+.wrap{
+	overflow: hidden;
+	min-width: 3.2rem;
+	/*max-width: 7.5rem;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+/*竖屏提示*/
+#shutips{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../img/load_bg.png) no-repeat center; 
+	background-size: cover;
+	z-index: 1000;
+}
+#shutips img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto auto;
+	width: 5.2rem;
+}
+/*loading*/
+.wrap .load-box{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../img/load_bg.png) no-repeat center; 
+	background-size: cover;
+	z-index: 100;
+}
+.wrap .load-box .load-logo{
+	display: block;
+	position: absolute;
+	top: 1.3rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 1.86rem;
+}
+.wrap .load-box .progress-box{
+	display: block;
+	position: absolute;
+	top: 4.22rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 6.2rem;
+}
+.wrap .load-box .progress{
+	width: 5.67rem;
+    height: 0.93rem;
+    position: absolute;
+    top: 0.04rem;
+    left: 0.17rem;
+    text-align: center;
+    line-height: 0.93rem;
+    font-size: 0.26rem;
+    z-index: 10;
+}
+.wrap .load-box .progress .pao{
+   display: block;
+    height: 0.93rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #4b9476;
+    z-index: 4;
+}
+.wrap .load-box .progress img{
+    display: block;
+    position: absolute;
+    width: 2.15rem;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    z-index: 4;
+}
+.wrap .load-box .process_text{
+   display: block;
+    font-weight: bold;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #c0c0c0;
+    font-size: 0.26rem;
+    text-align: center;
+    z-index: 4;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
+}
+.wrap .load-box .load-tip{
+	display: block;
+	width: 100%;
+}
+.wrap .load-box .load-login{
+	display: none;
+	position: absolute;
+	top: 4.17rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 3.7rem;
+}
+/*放回按钮*/
+.back1{
+	display: block;
+	width:0.56rem ;
+	position: absolute;
+	top: 0.24rem;
+	left: 0.24rem;
+	z-index: 10;
+}
+
+/*老员工搜索*/
+.oldindexalert{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+.oldindexalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/oldindexbg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .oldindexalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .oldindexalert .memberbox .contentbox{
+    position: absolute;
+    top: 2rem;
+    left: 1.5rem;
+    display: block;
+    width: 7.9rem;
+    height: 3.5rem;
+    overflow: auto;
+}
+ .oldindexalert .memberbox .contentbox img{
+    display: block;
+    width: 100%;
+}
+ .oldindexalert .memberbox .contentbox li{
+    list-style: none;
+    position: absolute;
+    width: 1.32rem;
+    height: 0.44rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(1){
+    top: 1.4rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(2){
+    top: 2.84rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(3){
+    top: 2.84rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(4){
+    top: 2.84rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(5){
+    top: 2.84rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(6){
+    top: 2.84rem;
+    left: 6.14rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(7){
+    top: 3.54rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(8){
+    top: 3.54rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(9){
+    top: 3.54rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(10){
+   top: 3.54rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(11){
+    top: 3.54rem;
+    left: 6.14rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(12){
+    top: 4.22rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(13){
+    top: 4.22rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(14){
+    top: 5.7rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(15){
+    top: 5.7rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(16){
+     top: 5.7rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(17){
+    top: 5.7rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(18){
+    top: 5.7rem;
+    left: 6.14rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(19){
+    top: 6.4rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(20){
+    top: 7.8rem;
+    left: 0.31rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(21){
+    top: 9.26rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(22){
+    top: 9.26rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(23){
+    top: 9.26rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(24){
+    top: 9.26rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(25){
+    top: 9.26rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(26){
+    top: 9.96rem;
+    left: 0.31rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(27){
+    top: 11.4rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(28){
+    top: 11.4rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(29){
+    top: 11.4rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(30){
+    top: 11.4rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(31){
+    top: 11.4rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(32){
+    top: 12.1rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(33){
+    top: 12.1rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(34){
+    top: 12.1rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(35){
+    top: 12.1rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(36){
+    top: 12.1rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(37){
+    top: 12.78rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(38){
+    top: 12.78rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(39){
+    top: 12.78rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(40){
+    top: 12.78rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(41){
+    top: 12.78rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(42){
+    top: 13.46rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(43){
+    top: 13.46rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(44){
+    top: 13.46rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(45){
+    top: 13.46rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(46){
+    top: 13.46rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(47){
+    top: 14.14rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(48){
+    top: 14.14rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(49){
+    top: 14.14rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(50){
+    top: 14.14rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(51){
+    top: 14.14rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(52){
+    top: 14.84rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(53){
+    top: 14.84rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(54){
+    top: 14.84rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(55){
+    top: 14.84rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(56){
+    top: 14.84rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(57){
+    top: 15.54rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(58){
+    top: 15.54rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(59){
+    top: 15.54rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(60){
+    top: 15.54rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(61){
+    top: 15.54rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(62){
+    top: 16.2rem;
+    left: 0.31rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(63){
+    top: 17.66rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(64){
+    top: 17.66rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(65){
+    top: 17.66rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(66){
+    top: 17.66rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(67){
+    top: 17.66rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(68){
+    top: 18.32rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(69){
+    top: 18.32rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(70){
+    top: 18.32rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(71){
+    top: 18.32rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(72){
+    top: 18.32rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(73){
+    top: 19.04rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(74){
+    top: 19.04rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(75){
+    top: 19.04rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(76){
+    top: 19.04rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(77){
+    top: 19.04rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(78){
+    top: 19.74rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(79){
+    top: 19.74rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(80){
+    top: 19.74rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(81){
+    top: 19.74rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(82){
+    top: 19.74rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(83){
+    top: 21.15rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(84){
+    top: 21.15rem;
+    left: 1.77rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(85){
+    top: 22.59rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(86){
+    top: 22.59rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(87){
+    top: 22.59rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(88){
+    top: 22.59rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(89){
+    top: 22.59rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(90){
+    top: 23.3rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(91){
+    top: 23.3rem;
+    left: 1.77rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(92){
+    top: 23.3rem;
+    left: 3.24rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(93){
+    top: 23.3rem;
+    left: 4.7rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(94){
+    top: 23.3rem;
+    left: 6.14rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(95){
+    top: 23.98rem;
+    left: 0.31rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(96){
+    top: 25.4rem;
+    left: 0.31rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(97){
+    top: 26.86rem;
+    left: 0.31rem;
+}
+ .oldindexalert .memberbox .contentbox li:nth-child(98){
+    top: 26.86rem;
+    left: 1.77rem;
+}
+.oldindexalert .memberbox .contentbox li:nth-child(99){
+    top: 28.3rem;
+    left: 0.31rem;
+}
+/*老员工*/
+.oldmanalert{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 20;
+}
+
+.oldmanalert .memberbox{
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto auto;
+	width: 10.92rem;
+	height: 7.22rem;
+	background: url(../qijiandian/oldmemberbg.png) no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+ .oldmanalert .memberbox .close{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .oldmanalert .memberbox .back{
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    width: 1.63rem;
+    height: 1.2rem;
+}
+ .oldmanalert .memberbox .contentbox{
+   position: absolute;
+    top: 1.6rem;
+    left: 1rem;
+    display: block;
+    width: 8.6rem;
+    height: 3.88rem;
+    overflow: hidden;
+}
+ .oldmanalert .memberbox .contentbox li{
+    position: absolute;
+    top: 0;
+    left:0;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+ .oldmanalert .memberbox .contentbox li.active{
+    display: block;
+}
+/*图片*/
+ .oldmanalert .memberbox .contentbox li .imgbox{
+    position: absolute;
+    top: 0.39rem;
+    left: 1.05rem;
+    display: block;
+    width: 2.28rem;
+    height: 3.07rem;
+    overflow: hidden;
+}
+ .oldmanalert .memberbox .contentbox li .imgbox img{
+    display: block;
+    width: 100%;
+}
+/*信息*/
+ .oldmanalert .memberbox .contentbox li .name{
+    position: absolute;
+    top: 0.3rem;
+    left: 5.8rem;
+    display: block;
+    width: 2.2rem;
+    height: 0.38rem;
+    font-size:0.22rem ;
+    color: #FFFFFF;
+    font-weight:bold;
+    line-height: 0.41rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.oldmanalert .memberbox .contentbox li .bumen{
+    position: absolute;
+    top: 1.56rem;
+    left: 5.8rem;
+    display: block;
+    width: 2.2rem;
+    height: 0.38rem;
+    font-size: 0.22rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 0.41rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.oldmanalert .memberbox .contentbox li .id{
+    position: absolute;
+    top: 2.81rem;
+    left: 5.8rem;
+    display: block;
+    width: 2.2rem;
+    height: 0.41rem;
+    font-size:0.22rem ;
+    color: #FFFFFF;
+    font-weight:bold;
+    line-height: 0.4rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/*左右切换*/
+ .oldmanalert .memberbox .contentbox .pre{
+   position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.1rem;
+    margin: auto 0;
+    display: block;
+    width: 0.4rem;
+}
+ .oldmanalert .memberbox .contentbox .next{
+   position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0rem;
+    margin: auto 0;
+    display: block;
+    width: 0.4rem;
+}

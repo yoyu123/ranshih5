@@ -1,0 +1,272 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	outline: none;
+	-webkit-user-select：none;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	font-family: "微软雅黑";
+}
+html,body{
+	font-size: 100px;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+a{
+	text-decoration: none;
+}
+img{
+    border: none;
+    vertical-align: middle;
+    max-width: 100%;
+}
+.wrap{
+	overflow: hidden;
+	position: relative;
+	min-width: 3.2rem;
+	/*max-width: 7.5rem;*/
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: gainsboro;
+}
+/*竖屏提示*/
+#shutips{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../img/load_bg.png) no-repeat center; 
+	background-size: cover;
+	z-index: 1000;
+}
+#shutips img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto auto;
+	width: 5.2rem;
+}
+        /*loading*/
+.wrap .load-box{
+	/*display: none;*/
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background:url(../img/load_bg.png) no-repeat center; 
+	background-size: cover;
+}
+.wrap .load-box .load-logo{
+	display: block;
+	position: absolute;
+	top: 1.3rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 1.86rem;
+}
+.wrap .load-box .progress-box{
+	display: block;
+	position: absolute;
+	top: 4.6rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 6.2rem;
+}
+.wrap .load-box .progress{
+	width: 5.66rem;
+    height: 0.93rem;
+    position: absolute;
+    top: 0.04rem;
+    left: 0.17rem;
+    text-align: center;
+    line-height: 0.93rem;
+    font-size: 0.26rem;
+    z-index: 10;
+}
+.wrap .load-box .progress .pao{
+   display: block;
+    height: 0.93rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #4b9476;
+    z-index: 4;
+}
+.wrap .load-box .progress img{
+    display: block;
+    position: absolute;
+    width: 2.15rem;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    z-index: 4;
+}
+.wrap .load-box .process_text{
+   display: block;
+    font-weight: bold;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #c0c0c0;
+    font-size: 0.26rem;
+    text-align: center;
+    z-index: 4;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.5);
+}
+.wrap .load-box .load-tip{
+	display: block;
+	width: 100%;
+}
+.wrap .load-box .load-login{
+	display: none;
+	position: absolute;
+	top: 4.17rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 3.7rem;
+}
+/*login*/
+.wrap .message-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background:url(../img/load_bg.png) no-repeat center; 
+	background-size: cover;
+	overflow: auto;
+}
+.wrap .message-box .messagecontent{
+	overflow: auto;
+}
+.wrap .message-box .messagecontent .bg{
+	display: block;
+	width: 100%;
+}
+.wrap .message-box .messagecontent .back{
+    position: absolute;
+    top: 0.8rem;
+    left: 0.5rem;
+    display: block;
+    width: 1rem;
+    height: 0.44rem;
+}
+.wrap .message-box .messagecontent .mcontent{
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    width: 6.4rem;
+    height: 8.4rem;
+    overflow: auto;
+}
+.wrap .message-box .messagecontent .mcontent li{
+	list-style: none;
+    width: 6.4rem;
+    overflow: hidden;
+    padding: 0.18rem 0;
+}
+.wrap .message-box .messagecontent .mcontent li .left{
+	float: left;
+	position: relative;
+    width: 1.4rem;
+    height: 0.7rem;
+    overflow: hidden;
+    padding-right: 0.1rem;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.wrap .message-box .messagecontent .mcontent li span{
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+    width: 0.04rem;
+    height: 0.5rem;
+    background-color: #118287;
+    border-radius: 0.02rem;
+    overflow: hidden;
+}
+.wrap .message-box .messagecontent .mcontent li .right{
+	padding-left: 0.2rem;
+    float: left;
+    width: 4.94rem;
+    overflow: hidden;
+}
+.wrap .message-box .messagecontent .mcontent li .right .ccontent{
+	font-size: 0.2rem;
+	color: #FFFFFF;
+	text-align: justify;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-align: justify;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+}
+.wrap .message-box .messagecontent .mcontent li .right .time{
+	font-size: 0.2rem;
+	color: #a6c0c0;
+	text-align: right;
+}
+.wrap .message-box .messagecontent .fabubtn{
+    position: absolute;
+    top: 11.24rem;
+    left: 6.1rem;
+    width: 1rem;
+    height: 0.5rem;
+}
+.wrap .message-box .messagecontent #info{
+    position: absolute;
+    top: 11.18rem;
+    left: 0.42rem;
+    width: 5.56rem;
+    height: 0.58rem;
+    background-color: #c3eee3;
+    line-height: 0.58rem;
+    font-size: 0.2rem;
+   color: #275540;
+    outline: none;
+    padding: 0 0.1rem;
+}
+::-webkit-input-placeholder{
+color: #275540;;
+}
+:-ms-input-placeholder{
+color: #275540;;
+}
+::-moz-placeholder{
+color: #275540;;
+}
+.tipsa{
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto auto;
+	width: 2rem;
+	height: 0.5rem;
+	border-radius: 0.04rem;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 0.26rem;
+	color: #FFFFFF;
+	line-height: 0.5rem;
+	text-align: center;
+}
